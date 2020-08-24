@@ -1,4 +1,4 @@
-# nrd.js
+# NRD.js
 
 > A little react component library created by lnardon
 
@@ -7,21 +7,19 @@
 ## Install
 
 ```bash
-npm install --save nrd.js
+npm install nrd.js
 ```
 
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react'
 
 import MyComponent from 'nrd.js'
 import 'nrd.js/dist/index.css'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const App = () => {
+  return <MyComponent />
 }
 ```
 

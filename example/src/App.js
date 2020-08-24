@@ -1,10 +1,16 @@
 import React from 'react'
 
-import { ExampleComponent } from 'nrd.js'
+import { LoginForm } from 'nrd.js'
 import 'nrd.js/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return (
+    <LoginForm
+      loginImage={
+        'https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png'
+      }
+    />
+  )
 }
 
 export default App

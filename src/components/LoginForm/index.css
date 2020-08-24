@@ -1,4 +1,4 @@
-._index__form__2EV-Y {
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,23 +7,23 @@
   border: 2px solid #131313;
 }
 
-._index__inputFieldDiv__WN_1o {
+.inputFieldDiv {
   display: flex;
   flex-direction: column;
 }
 
-._index__loginLogo__1WUdp {
+.loginLogo {
   margin: 1rem 0rem;
   height: 50px;
 }
 
-._index__inputFieldDiv__WN_1o > label {
+.inputFieldDiv > label {
   font-size: 1rem;
   font-weight: 400;
   color: #232323;
 }
 
-._index__inputFieldDiv__WN_1o > input {
+.inputFieldDiv > input {
   background-color: transparent;
   border: 2px solid #313131;
   outline: none;
@@ -33,7 +33,7 @@
   width: 100%;
 }
 
-._index__loginBtn__2Xifd {
+.loginBtn {
   background-color: #131313;
   border: none;
   padding: 0.25rem 0.5rem;
@@ -48,7 +48,7 @@
   color: #fafafa;
 }
 
-._index__loginBtn__2Xifd:hover {
+.loginBtn:hover {
   box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.1);
   transform: scale(1.03);
 }
