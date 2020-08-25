@@ -1,5 +1,5 @@
 import React from 'react'
 
-import Form from './components/LoginForm'
+import FormComponent from './components/LoginForm'
 
-export const LoginForm = (props) => <Form {...props} />
+export const LoginForm = (props) => <FormComponent {...props} />
