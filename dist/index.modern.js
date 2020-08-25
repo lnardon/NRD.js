@@ -51,7 +51,64 @@ const LoginForm = ({
   }, "Login"));
 };
 
-const LoginForm$1 = props => /*#__PURE__*/React.createElement(LoginForm, props);
+var styles$1 = {"form":"_styles__form__1dR4_","inputFieldDiv":"_styles__inputFieldDiv__1eXrs","loginLogo":"_styles__loginLogo__1lEc1","loginBtn":"_styles__loginBtn__1yQ_8"};
 
-export { LoginForm$1 as LoginForm };
+function ContactForm({
+  url
+}) {
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [message, setMessage] = useState();
+
+  const submitHandler = async () => {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        message
+      })
+    });
+    alert(response);
+  };
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: styles$1.mainContactForm
+  }, /*#__PURE__*/React.createElement("div", {
+    className: styles$1.inputFieldDiv
+  }, /*#__PURE__*/React.createElement("label", {
+    htmlFor: "Name"
+  }, "Name:"), /*#__PURE__*/React.createElement("input", {
+    type: "text",
+    name: "userNamename",
+    onChange: e => setName(e.target.value)
+  })), /*#__PURE__*/React.createElement("div", {
+    className: styles$1.inputFieldDiv
+  }, /*#__PURE__*/React.createElement("label", {
+    htmlFor: "Email"
+  }, "Email:"), /*#__PURE__*/React.createElement("input", {
+    type: "email",
+    name: "Email",
+    onChange: e => setEmail(e.target.value)
+  })), /*#__PURE__*/React.createElement("div", {
+    className: styles$1.inputFieldDiv
+  }, /*#__PURE__*/React.createElement("label", {
+    htmlFor: "Email"
+  }, "Message:"), /*#__PURE__*/React.createElement("textarea", {
+    type: "email",
+    name: "Email",
+    onChange: e => setMessage(e.target.value)
+  })), /*#__PURE__*/React.createElement("button", {
+    className: styles$1.loginBtn,
+    onClick: () => submitHandler()
+  }, "Send Message"));
+}
+
+const LoginForm$1 = props => /*#__PURE__*/React.createElement(LoginForm, props);
+const ContactForm$1 = props => /*#__PURE__*/React.createElement(ContactForm, props);
+
+export { ContactForm$1 as ContactForm, LoginForm$1 as LoginForm };
 //# sourceMappingURL=index.modern.js.map
