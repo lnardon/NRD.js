@@ -51,10 +51,11 @@ const LoginForm = ({
   }, "Login"));
 };
 
-var styles$1 = {"form":"_styles__form__1dR4_","inputFieldDiv":"_styles__inputFieldDiv__1eXrs","loginLogo":"_styles__loginLogo__1lEc1","loginBtn":"_styles__loginBtn__1yQ_8"};
+var styles$1 = {"mainContactForm":"_styles__mainContactForm__1afsr","inputFieldDiv":"_styles__inputFieldDiv__1eXrs","loginLogo":"_styles__loginLogo__1lEc1","loginBtn":"_styles__loginBtn__1yQ_8"};
 
 function ContactForm({
-  url
+  url,
+  title
 }) {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
@@ -77,7 +78,7 @@ function ContactForm({
 
   return /*#__PURE__*/React.createElement("div", {
     className: styles$1.mainContactForm
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("h1", null, title), /*#__PURE__*/React.createElement("div", {
     className: styles$1.inputFieldDiv
   }, /*#__PURE__*/React.createElement("label", {
     htmlFor: "Name"
@@ -100,7 +101,8 @@ function ContactForm({
   }, "Message:"), /*#__PURE__*/React.createElement("textarea", {
     type: "email",
     name: "Email",
-    onChange: e => setMessage(e.target.value)
+    onChange: e => setMessage(e.target.value),
+    draggable: "false"
   })), /*#__PURE__*/React.createElement("button", {
     className: styles$1.loginBtn,
     onClick: () => submitHandler()

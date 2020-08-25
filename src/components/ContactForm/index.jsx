@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import styles from './styles.css'
 
-function ContactForm({ url }) {
+function ContactForm({ url, title }) {
   const [name, setName] = useState()
   const [email, setEmail] = useState()
   const [message, setMessage] = useState()
@@ -18,6 +18,7 @@ function ContactForm({ url }) {
 
   return (
     <div className={styles.mainContactForm}>
+      <h1>{title}</h1>
       <div className={styles.inputFieldDiv}>
         <label htmlFor='Name'>Name:</label>
         <input
@@ -40,6 +41,7 @@ function ContactForm({ url }) {
           type='email'
           name='Email'
           onChange={(e) => setMessage(e.target.value)}
+          draggable='false'
         />
       </div>
       <button className={styles.loginBtn} onClick={() => submitHandler()}>

@@ -53,18 +53,31 @@
   transform: scale(1.03);
 }
 
-._styles__form__1dR4_ {
+* {
+  box-sizing: border-box;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  height: 150px;
+  border: 2px solid #131313;
+  resize: none;
+}
+
+._styles__mainContactForm__1afsr {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 300px;
+  width: 100%;
   border: 2px solid #131313;
 }
 
 ._styles__inputFieldDiv__1eXrs {
   display: flex;
   flex-direction: column;
+  width: 90%;
 }
 
 ._styles__loginLogo__1lEc1 {
@@ -85,7 +98,6 @@
   padding: 0.35rem;
   font-size: 1rem;
   margin-bottom: 0.5rem;
-  width: 100%;
 }
 
 ._styles__loginBtn__1yQ_8 {
@@ -97,7 +109,7 @@
   line-height: 1rem;
   cursor: pointer;
   margin-bottom: 2rem;
-  width: 100%;
+  width: 90%;
   height: 35px;
   margin-top: 1rem;
   color: #fafafa;

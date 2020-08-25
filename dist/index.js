@@ -70,10 +70,11 @@ var LoginForm = function LoginForm(_ref) {
   }, "Login"));
 };
 
-var styles$1 = {"form":"_styles__form__1dR4_","inputFieldDiv":"_styles__inputFieldDiv__1eXrs","loginLogo":"_styles__loginLogo__1lEc1","loginBtn":"_styles__loginBtn__1yQ_8"};
+var styles$1 = {"mainContactForm":"_styles__mainContactForm__1afsr","inputFieldDiv":"_styles__inputFieldDiv__1eXrs","loginLogo":"_styles__loginLogo__1lEc1","loginBtn":"_styles__loginBtn__1yQ_8"};
 
 function ContactForm(_ref) {
-  var url = _ref.url;
+  var url = _ref.url,
+      title = _ref.title;
 
   var _useState = React.useState(),
       name = _useState[0],
@@ -109,7 +110,7 @@ function ContactForm(_ref) {
 
   return /*#__PURE__*/React__default.createElement("div", {
     className: styles$1.mainContactForm
-  }, /*#__PURE__*/React__default.createElement("div", {
+  }, /*#__PURE__*/React__default.createElement("h1", null, title), /*#__PURE__*/React__default.createElement("div", {
     className: styles$1.inputFieldDiv
   }, /*#__PURE__*/React__default.createElement("label", {
     htmlFor: "Name"
@@ -138,7 +139,8 @@ function ContactForm(_ref) {
     name: "Email",
     onChange: function onChange(e) {
       return setMessage(e.target.value);
-    }
+    },
+    draggable: "false"
   })), /*#__PURE__*/React__default.createElement("button", {
     className: styles$1.loginBtn,
     onClick: function onClick() {
