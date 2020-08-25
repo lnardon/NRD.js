@@ -18,7 +18,7 @@ function ContactForm({ url, title }) {
 
   return (
     <div className={styles.mainContactForm}>
-      <h1>{title}</h1>
+      <h1 className={styles.title}>{title}</h1>
       <div className={styles.inputFieldDiv}>
         <label htmlFor='Name'>Name:</label>
         <input
