@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-var styles = {"form":"_index__form__2EV-Y","inputFieldDiv":"_index__inputFieldDiv__WN_1o","loginLogo":"_index__loginLogo__1WUdp","loginBtn":"_index__loginBtn__2Xifd"};
+var styles = {"form":"_styles__form__2vqA3","inputFieldDiv":"_styles__inputFieldDiv__u071I","loginLogo":"_styles__loginLogo__rSjCy","loginBtn":"_styles__loginBtn__1uQnd"};
 
 const LoginForm = ({
   loginImage,
@@ -111,8 +111,49 @@ function ContactForm({
   }, "Send Message"));
 }
 
+var styles$2 = {"inputFieldContainer":"_styles__inputFieldContainer__1dcFC","input":"_styles__input__1iWA1","inputIcon":"_styles__inputIcon__2Dfna","clearIcon":"_styles__clearIcon__2SdZB","clearBtnAnimation":"_styles__clearBtnAnimation__ZTJOn"};
+
+function InputField({
+  type,
+  getvalueCallback
+}) {
+  const [fieldValue, setFieldValue] = useState('');
+  const [timer, setTimer] = useState();
+
+  const changeValue = val => {
+    setFieldValue(val);
+    clearTimeout(timer);
+    setTimer(setTimeout(() => {
+      getvalueCallback(fieldValue);
+    }, 500));
+  };
+
+  const clearFieldValue = () => {
+    clearTimeout(timer);
+    setFieldValue('');
+  };
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: styles$2.inputFieldContainer
+  }, /*#__PURE__*/React.createElement("input", {
+    type: type,
+    name: "value",
+    className: styles$2.input,
+    value: fieldValue,
+    onChange: e => changeValue(e.target.value)
+  }), /*#__PURE__*/React.createElement("button", {
+    className: styles$2.inputIcon,
+    onClick: clearFieldValue
+  }, fieldValue.length > 0 ? /*#__PURE__*/React.createElement("img", {
+    src: "https://image.flaticon.com/icons/svg/126/126497.svg",
+    alt: "Close Icon",
+    className: styles$2.clearIcon
+  }) : null));
+}
+
 const LoginForm$1 = props => /*#__PURE__*/React.createElement(LoginForm, props);
 const ContactForm$1 = props => /*#__PURE__*/React.createElement(ContactForm, props);
+const InputField$1 = props => /*#__PURE__*/React.createElement(InputField, props);
 
-export { ContactForm$1 as ContactForm, LoginForm$1 as LoginForm };
+export { ContactForm$1 as ContactForm, InputField$1 as InputField, LoginForm$1 as LoginForm };
 //# sourceMappingURL=index.modern.js.map

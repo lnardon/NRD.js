@@ -53,6 +53,61 @@
   transform: scale(1.03);
 }
 
+._styles__form__2vqA3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  border: 2px solid #131313;
+}
+
+._styles__inputFieldDiv__u071I {
+  display: flex;
+  flex-direction: column;
+}
+
+._styles__loginLogo__rSjCy {
+  margin: 1rem 0rem;
+  height: 50px;
+}
+
+._styles__inputFieldDiv__u071I > label {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #232323;
+}
+
+._styles__inputFieldDiv__u071I > input {
+  background-color: transparent;
+  border: 2px solid #313131;
+  outline: none;
+  padding: 0.35rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+._styles__loginBtn__1uQnd {
+  background-color: #131313;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  width: 100px;
+  height: 30px;
+  margin-top: 1rem;
+  color: #fafafa;
+}
+
+._styles__loginBtn__1uQnd:hover {
+  box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.1);
+  transform: scale(1.03);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -117,4 +172,66 @@ textarea {
 
 ._styles__loginBtn__1yQ_8:hover {
   box-shadow: 0px 0px 11px 3px rgba(0, 0, 0, 0.15);
+}
+
+._styles__inputFieldContainer__1dcFC {
+  width: 100%;
+  position: relative;
+}
+
+._styles__input__1iWA1 {
+  width: 100%;
+  height: 100%;
+  padding: 0.75rem 0.5rem;
+  border: 2px solid #171717;
+  border-radius: 5px;
+  outline: 1px solid lightgrey;
+  font-size: 1.25rem;
+  padding-right: 3.25rem;
+}
+
+._styles__inputIcon__2Dfna {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  text-decoration: none;
+  outline: none;
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-color: transparent;
+}
+
+._styles__clearIcon__2SdZB {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  -webkit-animation: _styles__clearBtnAnimation__ZTJOn 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          animation: _styles__clearBtnAnimation__ZTJOn 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@-webkit-keyframes _styles__clearBtnAnimation__ZTJOn {
+  from {
+    width: 10px;
+    height: 10px;
+  }
+  to {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@keyframes _styles__clearBtnAnimation__ZTJOn {
+  from {
+    width: 10px;
+    height: 10px;
+  }
+  to {
+    width: 25px;
+    height: 25px;
+  }
 }

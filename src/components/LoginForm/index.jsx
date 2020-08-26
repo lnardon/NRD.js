@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import styles from './index.css'
+import styles from './styles.css'
 
 const LoginForm = ({ loginImage, url }) => {
   const [username, setUsername] = useState('')

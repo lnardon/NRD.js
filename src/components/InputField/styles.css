@@ -1,0 +1,49 @@
+.inputFieldContainer {
+  width: 100%;
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  padding: 0.75rem 0.5rem;
+  border: 2px solid #171717;
+  border-radius: 5px;
+  outline: 1px solid lightgrey;
+  font-size: 1.25rem;
+  padding-right: 3.25rem;
+}
+
+.inputIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  text-decoration: none;
+  outline: none;
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-color: transparent;
+}
+
+.clearIcon {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  animation: clearBtnAnimation 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes clearBtnAnimation {
+  from {
+    width: 10px;
+    height: 10px;
+  }
+  to {
+    width: 25px;
+    height: 25px;
+  }
+}

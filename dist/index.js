@@ -3,7 +3,7 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var React = require('react');
 var React__default = _interopDefault(React);
 
-var styles = {"form":"_index__form__2EV-Y","inputFieldDiv":"_index__inputFieldDiv__WN_1o","loginLogo":"_index__loginLogo__1WUdp","loginBtn":"_index__loginBtn__2Xifd"};
+var styles = {"form":"_styles__form__2vqA3","inputFieldDiv":"_styles__inputFieldDiv__u071I","loginLogo":"_styles__loginLogo__rSjCy","loginBtn":"_styles__loginBtn__1uQnd"};
 
 var LoginForm = function LoginForm(_ref) {
   var loginImage = _ref.loginImage,
@@ -151,13 +151,64 @@ function ContactForm(_ref) {
   }, "Send Message"));
 }
 
+var styles$2 = {"inputFieldContainer":"_styles__inputFieldContainer__1dcFC","input":"_styles__input__1iWA1","inputIcon":"_styles__inputIcon__2Dfna","clearIcon":"_styles__clearIcon__2SdZB","clearBtnAnimation":"_styles__clearBtnAnimation__ZTJOn"};
+
+function InputField(_ref) {
+  var type = _ref.type,
+      getvalueCallback = _ref.getvalueCallback;
+
+  var _useState = React.useState(''),
+      fieldValue = _useState[0],
+      setFieldValue = _useState[1];
+
+  var _useState2 = React.useState(),
+      timer = _useState2[0],
+      setTimer = _useState2[1];
+
+  var changeValue = function changeValue(val) {
+    setFieldValue(val);
+    clearTimeout(timer);
+    setTimer(setTimeout(function () {
+      getvalueCallback(fieldValue);
+    }, 500));
+  };
+
+  var clearFieldValue = function clearFieldValue() {
+    clearTimeout(timer);
+    setFieldValue('');
+  };
+
+  return /*#__PURE__*/React__default.createElement("div", {
+    className: styles$2.inputFieldContainer
+  }, /*#__PURE__*/React__default.createElement("input", {
+    type: type,
+    name: "value",
+    className: styles$2.input,
+    value: fieldValue,
+    onChange: function onChange(e) {
+      return changeValue(e.target.value);
+    }
+  }), /*#__PURE__*/React__default.createElement("button", {
+    className: styles$2.inputIcon,
+    onClick: clearFieldValue
+  }, fieldValue.length > 0 ? /*#__PURE__*/React__default.createElement("img", {
+    src: "https://image.flaticon.com/icons/svg/126/126497.svg",
+    alt: "Close Icon",
+    className: styles$2.clearIcon
+  }) : null));
+}
+
 var LoginForm$1 = function LoginForm$1(props) {
   return /*#__PURE__*/React__default.createElement(LoginForm, props);
 };
 var ContactForm$1 = function ContactForm$1(props) {
   return /*#__PURE__*/React__default.createElement(ContactForm, props);
 };
+var InputField$1 = function InputField$1(props) {
+  return /*#__PURE__*/React__default.createElement(InputField, props);
+};
 
 exports.ContactForm = ContactForm$1;
+exports.InputField = InputField$1;
 exports.LoginForm = LoginForm$1;
 //# sourceMappingURL=index.js.map

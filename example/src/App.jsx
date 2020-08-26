@@ -1,10 +1,16 @@
 import React from 'react'
 
-import { ContactForm } from 'nrd.js'
+import { InputField } from 'nrd.js'
 import 'nrd.js/dist/index.css'
 
 const App = () => {
-  return <ContactForm title='CONTACT ME HERE!' />
+  return (
+    <InputField
+      type='number'
+      title='CONTACT ME HERE!'
+      getvalueCallback={(val) => console.log(val)}
+    />
+  )
 }
 
 export default App
