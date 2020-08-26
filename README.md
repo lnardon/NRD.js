@@ -49,7 +49,7 @@ MIT © [lnardon](https://github.com/lnardon)
 
 #### ContactForm
 
-| Prop       | Description                                                               | value/format |
-| :--------- | :------------------------------------------------------------------------ | :----------- |
-| LoginImage | URL of the image displayed above the form                                 | string       |
-| url        | URL of the server to make the POST request with the username and password | sting        |
+| Prop  | Description                                                               | value/format |
+| :---- | :------------------------------------------------------------------------ | :----------- |
+| url   | URL of the server to make the POST request with the username and password | sting        |
+| title | Title to be displayed above the form                                      | string       |
