@@ -169,7 +169,7 @@ function InputField(_ref) {
     setFieldValue(val);
     clearTimeout(timer);
     setTimer(setTimeout(function () {
-      getvalueCallback(fieldValue);
+      getvalueCallback(val);
     }, 500));
   };
 

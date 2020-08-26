@@ -124,7 +124,7 @@ function InputField({
     setFieldValue(val);
     clearTimeout(timer);
     setTimer(setTimeout(() => {
-      getvalueCallback(fieldValue);
+      getvalueCallback(val);
     }, 500));
   };
 

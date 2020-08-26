@@ -11,7 +11,7 @@ function InputField({ type, getvalueCallback }) {
     clearTimeout(timer)
     setTimer(
       setTimeout(() => {
-        getvalueCallback(fieldValue)
+        getvalueCallback(val)
       }, 500)
     )
   }

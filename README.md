@@ -10,6 +10,7 @@ You can use this React Component Library to optimize your front-end development 
 
 - LoginForm
 - ContactForm
+- InputField
 
 ## Install
 
