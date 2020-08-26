@@ -18,3 +18,8 @@
   background-image: url('https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/star-128.png');
   background-size: cover;
 }
+
+.active:hover,
+.disabled:hover {
+  transform: scale(1.1);
+}

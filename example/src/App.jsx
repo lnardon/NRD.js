@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { Rating } from 'nrd.js'
+import { Slider } from 'nrd.js'
 import 'nrd.js/dist/index.css'
 
 const App = () => {
   return (
-    <Rating
+    <Slider
       getvalueCallback={(val) => console.log(val)}
       options={[
         { label: 'First', value: 1 },

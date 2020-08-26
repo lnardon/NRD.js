@@ -1,4 +1,4 @@
-._2vqA3 {
+._styles__form__2vqA3 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,23 +7,23 @@
   border: 2px solid #131313;
 }
 
-._u071I {
+._styles__inputFieldDiv__u071I {
   display: flex;
   flex-direction: column;
 }
 
-._rSjCy {
+._styles__loginLogo__rSjCy {
   margin: 1rem 0rem;
   height: 50px;
 }
 
-._u071I > label {
+._styles__inputFieldDiv__u071I > label {
   font-size: 1rem;
   font-weight: 400;
   color: #232323;
 }
 
-._u071I > input {
+._styles__inputFieldDiv__u071I > input {
   background-color: transparent;
   border: 2px solid #313131;
   outline: none;
@@ -33,7 +33,7 @@
   width: 100%;
 }
 
-._1uQnd {
+._styles__loginBtn__1uQnd {
   background-color: #131313;
   border: none;
   padding: 0.25rem 0.5rem;
@@ -48,7 +48,7 @@
   color: #fafafa;
 }
 
-._1uQnd:hover {
+._styles__loginBtn__1uQnd:hover {
   box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.1);
   transform: scale(1.03);
 }
@@ -66,7 +66,7 @@ textarea {
   padding: 0.35rem;
 }
 
-._1afsr {
+._styles__mainContactForm__1afsr {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,23 +75,23 @@ textarea {
   border: 2px solid #131313;
 }
 
-._16Fk0 {
+._styles__title__16Fk0 {
   text-align: center;
 }
 
-._1eXrs {
+._styles__inputFieldDiv__1eXrs {
   display: flex;
   flex-direction: column;
   width: 90%;
 }
 
-._1eXrs > label {
+._styles__inputFieldDiv__1eXrs > label {
   font-size: 1rem;
   font-weight: 500;
   color: #232323;
 }
 
-._1eXrs > input {
+._styles__inputFieldDiv__1eXrs > input {
   background-color: transparent;
   border: 2px solid #313131;
   outline: none;
@@ -100,7 +100,7 @@ textarea {
   margin-bottom: 0.5rem;
 }
 
-._1yQ_8 {
+._styles__loginBtn__1yQ_8 {
   background-color: #131313;
   border: none;
   padding: 0.25rem 0.5rem;
@@ -115,7 +115,7 @@ textarea {
   color: #fafafa;
 }
 
-._1yQ_8:hover {
+._styles__loginBtn__1yQ_8:hover {
   box-shadow: 0px 0px 11px 3px rgba(0, 0, 0, 0.15);
 }
 
@@ -125,12 +125,12 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-._1dcFC {
+._styles__inputFieldContainer__1dcFC {
   width: 100%;
   position: relative;
 }
 
-._1iWA1 {
+._styles__input__1iWA1 {
   width: 100%;
   height: 100%;
   padding: 0.75rem 0.5rem;
@@ -141,7 +141,7 @@ input::-webkit-inner-spin-button {
   padding-right: 3.25rem;
 }
 
-._2Dfna {
+._styles__inputIcon__2Dfna {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -157,15 +157,15 @@ input::-webkit-inner-spin-button {
   background-color: transparent;
 }
 
-._2SdZB {
+._styles__clearIcon__2SdZB {
   width: 25px;
   height: 28px;
   cursor: pointer;
-  -webkit-animation: _ZTJOn 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-          animation: _ZTJOn 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-animation: _styles__clearBtnAnimation__ZTJOn 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          animation: _styles__clearBtnAnimation__ZTJOn 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-@-webkit-keyframes _ZTJOn {
+@-webkit-keyframes _styles__clearBtnAnimation__ZTJOn {
   from {
     width: 10px;
     height: 10px;
@@ -176,7 +176,7 @@ input::-webkit-inner-spin-button {
   }
 }
 
-@keyframes _ZTJOn {
+@keyframes _styles__clearBtnAnimation__ZTJOn {
   from {
     width: 10px;
     height: 10px;
@@ -187,7 +187,7 @@ input::-webkit-inner-spin-button {
   }
 }
 
-._hpaxr {
+._styles__select__hpaxr {
   width: 100%;
   padding: 0.25rem;
   font-size: 1rem;
@@ -196,18 +196,18 @@ input::-webkit-inner-spin-button {
   background-color: transparent;
 }
 
-._30K3w {
+._styles__option__30K3w {
   padding: 0.25rem;
   font-size: 1rem;
   font-weight: 500;
 }
 
-._3shO0 {
+._styles__ratingContainer__3shO0 {
   display: flex;
   height: 50px;
 }
 
-._20S1b {
+._styles__active__20S1b {
   width: 25px;
   height: 25px;
   margin: 0.25rem;
@@ -215,10 +215,30 @@ input::-webkit-inner-spin-button {
   background-size: cover;
 }
 
-._24sjJ {
+._styles__disabled__24sjJ {
   width: 25px;
   height: 25px;
   margin: 0.25rem;
   background-image: url('https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/star-128.png');
   background-size: cover;
+}
+
+._styles__active__20S1b:hover,
+._styles__disabled__24sjJ:hover {
+  transform: scale(1.1);
+}
+
+._styles__slider__2EqHe {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+._styles__slider__2EqHe::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background-color: #4caf50 !important;
+  cursor: pointer;
 }

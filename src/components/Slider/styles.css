@@ -1,0 +1,14 @@
+.slider {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background-color: #4caf50 !important;
+  cursor: pointer;
+}

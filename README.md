@@ -36,6 +36,7 @@ const App = () => {
 
 ## License
 
+Any Contribution is Welcome !!!
 MIT © [lnardon](https://github.com/lnardon)
 
 ## DOCUMENTATION

@@ -3,7 +3,7 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var React = require('react');
 var React__default = _interopDefault(React);
 
-var styles = {"form":"_2vqA3","inputFieldDiv":"_u071I","loginLogo":"_rSjCy","loginBtn":"_1uQnd"};
+var styles = {"form":"_styles__form__2vqA3","inputFieldDiv":"_styles__inputFieldDiv__u071I","loginLogo":"_styles__loginLogo__rSjCy","loginBtn":"_styles__loginBtn__1uQnd"};
 
 var LoginForm = function LoginForm(_ref) {
   var loginImage = _ref.loginImage,
@@ -70,7 +70,7 @@ var LoginForm = function LoginForm(_ref) {
   }, "Login"));
 };
 
-var styles$1 = {"mainContactForm":"_1afsr","title":"_16Fk0","inputFieldDiv":"_1eXrs","loginBtn":"_1yQ_8"};
+var styles$1 = {"mainContactForm":"_styles__mainContactForm__1afsr","title":"_styles__title__16Fk0","inputFieldDiv":"_styles__inputFieldDiv__1eXrs","loginBtn":"_styles__loginBtn__1yQ_8"};
 
 function ContactForm(_ref) {
   var url = _ref.url,
@@ -151,7 +151,7 @@ function ContactForm(_ref) {
   }, "Send Message"));
 }
 
-var styles$2 = {"inputFieldContainer":"_1dcFC","input":"_1iWA1","inputIcon":"_2Dfna","clearIcon":"_2SdZB","clearBtnAnimation":"_ZTJOn"};
+var styles$2 = {"inputFieldContainer":"_styles__inputFieldContainer__1dcFC","input":"_styles__input__1iWA1","inputIcon":"_styles__inputIcon__2Dfna","clearIcon":"_styles__clearIcon__2SdZB","clearBtnAnimation":"_styles__clearBtnAnimation__ZTJOn"};
 
 function InputField(_ref) {
   var type = _ref.type,
@@ -198,7 +198,7 @@ function InputField(_ref) {
   }) : null));
 }
 
-var styles$3 = {"select":"_hpaxr","option":"_30K3w"};
+var styles$3 = {"select":"_styles__select__hpaxr","option":"_styles__option__30K3w"};
 
 function Select(_ref) {
   var options = _ref.options,
@@ -218,7 +218,7 @@ function Select(_ref) {
   }));
 }
 
-var styles$4 = {"ratingContainer":"_3shO0","active":"_20S1b","disabled":"_24sjJ"};
+var styles$4 = {"ratingContainer":"_styles__ratingContainer__3shO0","active":"_styles__active__20S1b","disabled":"_styles__disabled__24sjJ"};
 
 function Rating(_ref) {
   var getvalueCallback = _ref.getvalueCallback;
@@ -244,6 +244,26 @@ function Rating(_ref) {
   }));
 }
 
+var styles$5 = {"slider":"_styles__slider__2EqHe"};
+
+function Slider(_ref) {
+  var min = _ref.min,
+      max = _ref.max,
+      getvalueCallback = _ref.getvalueCallback;
+  return /*#__PURE__*/React__default.createElement("input", {
+    className: styles$5.slider,
+    type: "range",
+    name: "Slider",
+    onChange: function onChange(e) {
+      return getvalueCallback(e.target.value);
+    },
+    min: min,
+    max: max,
+    tooltip: min,
+    defaultValue: min
+  });
+}
+
 var LoginForm$1 = function LoginForm$1(props) {
   return /*#__PURE__*/React__default.createElement(LoginForm, props);
 };
@@ -259,10 +279,14 @@ var Select$1 = function Select$1(props) {
 var Rating$1 = function Rating$1(props) {
   return /*#__PURE__*/React__default.createElement(Rating, props);
 };
+var Slider$1 = function Slider$1(props) {
+  return /*#__PURE__*/React__default.createElement(Slider, props);
+};
 
 exports.ContactForm = ContactForm$1;
 exports.InputField = InputField$1;
 exports.LoginForm = LoginForm$1;
 exports.Rating = Rating$1;
 exports.Select = Select$1;
+exports.Slider = Slider$1;
 //# sourceMappingURL=index.js.map
