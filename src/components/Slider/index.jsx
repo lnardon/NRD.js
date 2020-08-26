@@ -7,11 +7,9 @@ function Slider({ min, max, getvalueCallback }) {
     <input
       className={styles.slider}
       type='range'
-      name='Slider'
       onChange={(e) => getvalueCallback(e.target.value)}
       min={min}
       max={max}
-      tooltip={min}
       defaultValue={min}
     />
   )

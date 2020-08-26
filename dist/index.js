@@ -253,13 +253,11 @@ function Slider(_ref) {
   return /*#__PURE__*/React__default.createElement("input", {
     className: styles$5.slider,
     type: "range",
-    name: "Slider",
     onChange: function onChange(e) {
       return getvalueCallback(e.target.value);
     },
     min: min,
     max: max,
-    tooltip: min,
     defaultValue: min
   });
 }

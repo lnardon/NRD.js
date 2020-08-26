@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import styles from './styles.css'
+import help from '../../hooks/useCPFChecker'
 
 function Rating({ getvalueCallback }) {
   const icones = [1, 2, 3, 4, 5]
