@@ -24,7 +24,7 @@ function InputField({ type, getvalueCallback }) {
   return (
     <div className={styles.inputFieldContainer}>
       <input
-        type={type}
+        type={type || 'text'}
         name='value'
         className={styles.input}
         value={fieldValue}
@@ -33,7 +33,7 @@ function InputField({ type, getvalueCallback }) {
       <button className={styles.inputIcon} onClick={clearFieldValue}>
         {fieldValue.length > 0 ? (
           <img
-            src='https://image.flaticon.com/icons/svg/126/126497.svg'
+            src='https://image.flaticon.com/icons/svg/483/483328.svg'
             alt='Close Icon'
             className={styles.clearIcon}
           />

@@ -1,3 +1,9 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .inputFieldContainer {
   width: 100%;
   position: relative;
@@ -32,7 +38,7 @@
 
 .clearIcon {
   width: 25px;
-  height: 25px;
+  height: 28px;
   cursor: pointer;
   animation: clearBtnAnimation 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -44,6 +50,6 @@
   }
   to {
     width: 25px;
-    height: 25px;
+    height: 28px;
   }
 }

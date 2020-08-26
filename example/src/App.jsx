@@ -1,14 +1,17 @@
 import React from 'react'
 
-import { InputField } from 'nrd.js'
+import { Select } from 'nrd.js'
 import 'nrd.js/dist/index.css'
 
 const App = () => {
   return (
-    <InputField
-      type='number'
-      title='CONTACT ME HERE!'
+    <Select
       getvalueCallback={(val) => console.log(val)}
+      options={[
+        { label: 'First', value: 1 },
+        { label: 'Second', value: 2 },
+        { label: 'Third', value: 3 }
+      ]}
     />
   )
 }

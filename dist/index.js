@@ -181,7 +181,7 @@ function InputField(_ref) {
   return /*#__PURE__*/React__default.createElement("div", {
     className: styles$2.inputFieldContainer
   }, /*#__PURE__*/React__default.createElement("input", {
-    type: type,
+    type: type || 'text',
     name: "value",
     className: styles$2.input,
     value: fieldValue,
@@ -192,10 +192,30 @@ function InputField(_ref) {
     className: styles$2.inputIcon,
     onClick: clearFieldValue
   }, fieldValue.length > 0 ? /*#__PURE__*/React__default.createElement("img", {
-    src: "https://image.flaticon.com/icons/svg/126/126497.svg",
+    src: "https://image.flaticon.com/icons/svg/483/483328.svg",
     alt: "Close Icon",
     className: styles$2.clearIcon
   }) : null));
+}
+
+var styles$3 = {"select":"_styles__select__hpaxr","option":"_styles__option__30K3w"};
+
+function Select(_ref) {
+  var options = _ref.options,
+      getvalueCallback = _ref.getvalueCallback;
+  return /*#__PURE__*/React__default.createElement("select", {
+    name: "Select",
+    className: styles$3.select,
+    onChange: function onChange(e) {
+      getvalueCallback(e.target.value);
+    }
+  }, options.map(function (option) {
+    return /*#__PURE__*/React__default.createElement("option", {
+      key: option.value,
+      value: option.value,
+      className: styles$3.option
+    }, option.label);
+  }));
 }
 
 var LoginForm$1 = function LoginForm$1(props) {
@@ -207,8 +227,12 @@ var ContactForm$1 = function ContactForm$1(props) {
 var InputField$1 = function InputField$1(props) {
   return /*#__PURE__*/React__default.createElement(InputField, props);
 };
+var Select$1 = function Select$1(props) {
+  return /*#__PURE__*/React__default.createElement(Select, props);
+};
 
 exports.ContactForm = ContactForm$1;
 exports.InputField = InputField$1;
 exports.LoginForm = LoginForm$1;
+exports.Select = Select$1;
 //# sourceMappingURL=index.js.map

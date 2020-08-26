@@ -6,6 +6,8 @@ A React Component Library with all the most used components for Front-End Develo
 
 You can use this React Component Library to optimize your front-end development or even give it a more complete feel to your functional mockups.
 
+For now all the components have a minimalistic black/white style but in the future new designs will be created
+
 ## Available Components:
 
 - LoginForm
