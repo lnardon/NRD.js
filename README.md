@@ -10,11 +10,11 @@ For now all the components have a minimalistic black/white style but in the futu
 
 ## Available Components:
 
-- LoginForm
-- ContactForm
-- InputField
-- Select
-- Rating
+- [LoginForm](#LoginForm)
+- [ContactForm](#ContactForm)
+- [InputField](#InputField)
+- [Select](#Select)
+- [Rating](#Rating)
 
 ## Install
 
@@ -40,16 +40,36 @@ MIT © [lnardon](https://github.com/lnardon)
 
 ## DOCUMENTATION
 
-#### LoginForm
+### LoginForm
 
 | Prop       | Description                                                               | value/format |
 | :--------- | :------------------------------------------------------------------------ | :----------- |
 | LoginImage | URL of the image displayed above the form                                 | string       |
 | url        | URL of the server to make the POST request with the username and password | sting        |
 
-#### ContactForm
+### ContactForm
 
 | Prop  | Description                                                               | value/format |
 | :---- | :------------------------------------------------------------------------ | :----------- |
 | url   | URL of the server to make the POST request with the username and password | sting        |
 | title | Title to be displayed above the form                                      | string       |
+
+### InputField
+
+| Prop             | Description                                                       | value/format |
+| :--------------- | :---------------------------------------------------------------- | :----------- |
+| type             | Type of the input field (e.g: string, number, email, password)    | sting        |
+| getvalueCallback | Callback that returns the value from the input field as parameter | function     |
+
+### Select
+
+| Prop             | Description                                                                                           | value/format  |
+| :--------------- | :---------------------------------------------------------------------------------------------------- | :------------ |
+| options          | Array with the options available for the user to select(e.g: {label: OptionTitle, value: InputValue}) | Array of JSON |
+| getvalueCallback | Callback that returns the selected value from the select as a parameter                               | function      |
+
+### Rating
+
+| Prop             | Description                                                            | value/format |
+| :--------------- | :--------------------------------------------------------------------- | :----------- |
+| getvalueCallback | Callback that returns the value from the Rating Component as parameter | function     |
