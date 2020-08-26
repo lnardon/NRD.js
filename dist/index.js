@@ -262,6 +262,48 @@ function Slider(_ref) {
   });
 }
 
+function useLogger(variable) {
+  React.useEffect(function () {
+    console.log(variable);
+  }, [variable]);
+}
+
+function useCPFChecker(cpf) {
+  var aux = 0;
+  var numbers = cpf.split('');
+  numbers.forEach(function (number) {
+    return aux += parseInt(number);
+  });
+  return JSON.stringify(aux).charAt(0) === JSON.stringify(aux).charAt(1);
+}
+
+function getSavedValue(key, initialValue) {
+  var savedValue = JSON.parse(localStorage.getItem(key));
+
+  if (savedValue) {
+    return savedValue;
+  }
+
+  if (initialValue instanceof Function) {
+    return initialValue();
+  }
+
+  return initialValue;
+}
+
+function useLocalStorage(key, initialValue) {
+  var _useState = React.useState(function () {
+    return getSavedValue(key, initialValue);
+  }),
+      value = _useState[0],
+      setValue = _useState[1];
+
+  React.useEffect(function () {
+    localStorage.setItem(key, value);
+  }, [value]);
+  return [value, setValue];
+}
+
 var LoginForm$1 = function LoginForm$1(props) {
   return /*#__PURE__*/React__default.createElement(LoginForm, props);
 };
@@ -280,6 +322,15 @@ var Rating$1 = function Rating$1(props) {
 var Slider$1 = function Slider$1(props) {
   return /*#__PURE__*/React__default.createElement(Slider, props);
 };
+var useLogger$1 = function useLogger$1(variable) {
+  return useLogger(variable);
+};
+var useCPFChecker$1 = function useCPFChecker$1(cpf) {
+  return useCPFChecker(cpf);
+};
+var useLocalStorage$1 = function useLocalStorage$1(key, initialValue) {
+  return useLocalStorage(key, initialValue);
+};
 
 exports.ContactForm = ContactForm$1;
 exports.InputField = InputField$1;
@@ -287,4 +338,7 @@ exports.LoginForm = LoginForm$1;
 exports.Rating = Rating$1;
 exports.Select = Select$1;
 exports.Slider = Slider$1;
+exports.useCPFChecker = useCPFChecker$1;
+exports.useLocalStorage = useLocalStorage$1;
+exports.useLogger = useLogger$1;
 //# sourceMappingURL=index.js.map

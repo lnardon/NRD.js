@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 var styles = {"form":"_styles__form__2vqA3","inputFieldDiv":"_styles__inputFieldDiv__u071I","loginLogo":"_styles__loginLogo__rSjCy","loginBtn":"_styles__loginBtn__1uQnd"};
 
@@ -208,12 +208,52 @@ function Slider({
   });
 }
 
+function useLogger(variable) {
+  useEffect(() => {
+    console.log(variable);
+  }, [variable]);
+}
+
+function useCPFChecker(cpf) {
+  let aux = 0;
+  const numbers = cpf.split('');
+  numbers.forEach(number => aux += parseInt(number));
+  return JSON.stringify(aux).charAt(0) === JSON.stringify(aux).charAt(1);
+}
+
+function getSavedValue(key, initialValue) {
+  const savedValue = JSON.parse(localStorage.getItem(key));
+
+  if (savedValue) {
+    return savedValue;
+  }
+
+  if (initialValue instanceof Function) {
+    return initialValue();
+  }
+
+  return initialValue;
+}
+
+function useLocalStorage(key, initialValue) {
+  const [value, setValue] = useState(() => {
+    return getSavedValue(key, initialValue);
+  });
+  useEffect(() => {
+    localStorage.setItem(key, value);
+  }, [value]);
+  return [value, setValue];
+}
+
 const LoginForm$1 = props => /*#__PURE__*/React.createElement(LoginForm, props);
 const ContactForm$1 = props => /*#__PURE__*/React.createElement(ContactForm, props);
 const InputField$1 = props => /*#__PURE__*/React.createElement(InputField, props);
 const Select$1 = props => /*#__PURE__*/React.createElement(Select, props);
 const Rating$1 = props => /*#__PURE__*/React.createElement(Rating, props);
 const Slider$1 = props => /*#__PURE__*/React.createElement(Slider, props);
+const useLogger$1 = variable => useLogger(variable);
+const useCPFChecker$1 = cpf => useCPFChecker(cpf);
+const useLocalStorage$1 = (key, initialValue) => useLocalStorage(key, initialValue);
 
-export { ContactForm$1 as ContactForm, InputField$1 as InputField, LoginForm$1 as LoginForm, Rating$1 as Rating, Select$1 as Select, Slider$1 as Slider };
+export { ContactForm$1 as ContactForm, InputField$1 as InputField, LoginForm$1 as LoginForm, Rating$1 as Rating, Select$1 as Select, Slider$1 as Slider, useCPFChecker$1 as useCPFChecker, useLocalStorage$1 as useLocalStorage, useLogger$1 as useLogger };
 //# sourceMappingURL=index.modern.js.map
