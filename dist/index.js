@@ -232,7 +232,7 @@ function Rating(_ref) {
     className: styles$4.ratingContainer
   }, icones.map(function (icone, index) {
     return /*#__PURE__*/React__default.createElement("div", {
-      key: index,
+      key: icone,
       className: selected > index ? styles$4.active : styles$4.disabled,
       onMouseOver: function onMouseOver() {
         return setSelected(index + 1);

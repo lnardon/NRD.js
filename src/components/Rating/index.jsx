@@ -11,7 +11,7 @@ function Rating({ getvalueCallback }) {
       {icones.map((icone, index) => {
         return (
           <div
-            key={index}
+            key={icone}
             className={selected > index ? styles.active : styles.disabled}
             onMouseOver={() => setSelected(index + 1)}
             onClick={() => getvalueCallback(index + 1)}

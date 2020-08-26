@@ -183,7 +183,7 @@ function Rating({
     className: styles$4.ratingContainer
   }, icones.map((icone, index) => {
     return /*#__PURE__*/React.createElement("div", {
-      key: index,
+      key: icone,
       className: selected > index ? styles$4.active : styles$4.disabled,
       onMouseOver: () => setSelected(index + 1),
       onClick: () => getvalueCallback(index + 1)
