@@ -45,20 +45,20 @@ MIT © [lnardon](https://github.com/lnardon)
 | Prop       | Description                                                               | value/format |
 | :--------- | :------------------------------------------------------------------------ | :----------- |
 | LoginImage | URL of the image displayed above the form                                 | string       |
-| url        | URL of the server to make the POST request with the username and password | sting        |
+| url        | URL of the server to make the POST request with the username and password | string       |
 
 ### ContactForm
 
 | Prop  | Description                                                               | value/format |
 | :---- | :------------------------------------------------------------------------ | :----------- |
-| url   | URL of the server to make the POST request with the username and password | sting        |
+| url   | URL of the server to make the POST request with the username and password | string       |
 | title | Title to be displayed above the form                                      | string       |
 
 ### InputField
 
 | Prop             | Description                                                       | value/format |
 | :--------------- | :---------------------------------------------------------------- | :----------- |
-| type             | Type of the input field (e.g: string, number, email, password)    | sting        |
+| type             | Type of the input field (e.g: string, number, email, password)    | string       |
 | getvalueCallback | Callback that returns the value from the input field as parameter | function     |
 
 ### Select

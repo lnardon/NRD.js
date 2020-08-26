@@ -1,26 +1,36 @@
 import React, { useState } from 'react';
 
-var styles = {"form":"_styles__form__2vqA3","inputFieldDiv":"_styles__inputFieldDiv__u071I","loginLogo":"_styles__loginLogo__rSjCy","loginBtn":"_styles__loginBtn__1uQnd"};
+var styles = {"form":"_2vqA3","inputFieldDiv":"_u071I","loginLogo":"_rSjCy","loginBtn":"_1uQnd"};
 
-const LoginForm = ({
-  loginImage,
-  url
-}) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+var LoginForm = function LoginForm(_ref) {
+  var loginImage = _ref.loginImage,
+      url = _ref.url;
 
-  const submitHandler = async () => {
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        username,
-        password
-      })
-    });
-    alert(response);
+  var _useState = useState(''),
+      username = _useState[0],
+      setUsername = _useState[1];
+
+  var _useState2 = useState(''),
+      password = _useState2[0],
+      setPassword = _useState2[1];
+
+  var submitHandler = function submitHandler() {
+    try {
+      return Promise.resolve(fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          username: username,
+          password: password
+        })
+      })).then(function (response) {
+        alert(response);
+      });
+    } catch (e) {
+      return Promise.reject(e);
+    }
   };
 
   return /*#__PURE__*/React.createElement("div", {
@@ -36,7 +46,9 @@ const LoginForm = ({
   }, "Username"), /*#__PURE__*/React.createElement("input", {
     type: "text",
     name: "username",
-    onChange: e => setUsername(e.target.value)
+    onChange: function onChange(e) {
+      return setUsername(e.target.value);
+    }
   })), /*#__PURE__*/React.createElement("div", {
     className: styles.inputFieldDiv
   }, /*#__PURE__*/React.createElement("label", {
@@ -44,36 +56,53 @@ const LoginForm = ({
   }, "Password"), /*#__PURE__*/React.createElement("input", {
     type: "password",
     name: "password",
-    onChange: e => setPassword(e.target.value)
+    onChange: function onChange(e) {
+      return setPassword(e.target.value);
+    }
   })), /*#__PURE__*/React.createElement("button", {
     className: styles.loginBtn,
-    onClick: () => submitHandler()
+    onClick: function onClick() {
+      return submitHandler();
+    }
   }, "Login"));
 };
 
-var styles$1 = {"mainContactForm":"_styles__mainContactForm__1afsr","title":"_styles__title__16Fk0","inputFieldDiv":"_styles__inputFieldDiv__1eXrs","loginBtn":"_styles__loginBtn__1yQ_8"};
+var styles$1 = {"mainContactForm":"_1afsr","title":"_16Fk0","inputFieldDiv":"_1eXrs","loginBtn":"_1yQ_8"};
 
-function ContactForm({
-  url,
-  title
-}) {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [message, setMessage] = useState();
+function ContactForm(_ref) {
+  var url = _ref.url,
+      title = _ref.title;
 
-  const submitHandler = async () => {
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        message
-      })
-    });
-    alert(response);
+  var _useState = useState(),
+      name = _useState[0],
+      setName = _useState[1];
+
+  var _useState2 = useState(),
+      email = _useState2[0],
+      setEmail = _useState2[1];
+
+  var _useState3 = useState(),
+      message = _useState3[0],
+      setMessage = _useState3[1];
+
+  var submitHandler = function submitHandler() {
+    try {
+      return Promise.resolve(fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          message: message
+        })
+      })).then(function (response) {
+        alert(response);
+      });
+    } catch (e) {
+      return Promise.reject(e);
+    }
   };
 
   return /*#__PURE__*/React.createElement("div", {
@@ -87,7 +116,9 @@ function ContactForm({
   }, "Name:"), /*#__PURE__*/React.createElement("input", {
     type: "text",
     name: "userNamename",
-    onChange: e => setName(e.target.value)
+    onChange: function onChange(e) {
+      return setName(e.target.value);
+    }
   })), /*#__PURE__*/React.createElement("div", {
     className: styles$1.inputFieldDiv
   }, /*#__PURE__*/React.createElement("label", {
@@ -95,7 +126,9 @@ function ContactForm({
   }, "Email:"), /*#__PURE__*/React.createElement("input", {
     type: "email",
     name: "Email",
-    onChange: e => setEmail(e.target.value)
+    onChange: function onChange(e) {
+      return setEmail(e.target.value);
+    }
   })), /*#__PURE__*/React.createElement("div", {
     className: styles$1.inputFieldDiv
   }, /*#__PURE__*/React.createElement("label", {
@@ -103,32 +136,41 @@ function ContactForm({
   }, "Message:"), /*#__PURE__*/React.createElement("textarea", {
     type: "email",
     name: "Email",
-    onChange: e => setMessage(e.target.value),
+    onChange: function onChange(e) {
+      return setMessage(e.target.value);
+    },
     draggable: "false"
   })), /*#__PURE__*/React.createElement("button", {
     className: styles$1.loginBtn,
-    onClick: () => submitHandler()
+    onClick: function onClick() {
+      return submitHandler();
+    }
   }, "Send Message"));
 }
 
-var styles$2 = {"inputFieldContainer":"_styles__inputFieldContainer__1dcFC","input":"_styles__input__1iWA1","inputIcon":"_styles__inputIcon__2Dfna","clearIcon":"_styles__clearIcon__2SdZB","clearBtnAnimation":"_styles__clearBtnAnimation__ZTJOn"};
+var styles$2 = {"inputFieldContainer":"_1dcFC","input":"_1iWA1","inputIcon":"_2Dfna","clearIcon":"_2SdZB","clearBtnAnimation":"_ZTJOn"};
 
-function InputField({
-  type,
-  getvalueCallback
-}) {
-  const [fieldValue, setFieldValue] = useState('');
-  const [timer, setTimer] = useState();
+function InputField(_ref) {
+  var type = _ref.type,
+      getvalueCallback = _ref.getvalueCallback;
 
-  const changeValue = val => {
+  var _useState = useState(''),
+      fieldValue = _useState[0],
+      setFieldValue = _useState[1];
+
+  var _useState2 = useState(),
+      timer = _useState2[0],
+      setTimer = _useState2[1];
+
+  var changeValue = function changeValue(val) {
     setFieldValue(val);
     clearTimeout(timer);
-    setTimer(setTimeout(() => {
+    setTimer(setTimeout(function () {
       getvalueCallback(val);
     }, 500));
   };
 
-  const clearFieldValue = () => {
+  var clearFieldValue = function clearFieldValue() {
     clearTimeout(timer);
     setFieldValue('');
   };
@@ -140,7 +182,9 @@ function InputField({
     name: "value",
     className: styles$2.input,
     value: fieldValue,
-    onChange: e => changeValue(e.target.value)
+    onChange: function onChange(e) {
+      return changeValue(e.target.value);
+    }
   }), /*#__PURE__*/React.createElement("button", {
     className: styles$2.inputIcon,
     onClick: clearFieldValue
@@ -151,19 +195,18 @@ function InputField({
   }) : null));
 }
 
-var styles$3 = {"select":"_styles__select__hpaxr","option":"_styles__option__30K3w"};
+var styles$3 = {"select":"_hpaxr","option":"_30K3w"};
 
-function Select({
-  options,
-  getvalueCallback
-}) {
+function Select(_ref) {
+  var options = _ref.options,
+      getvalueCallback = _ref.getvalueCallback;
   return /*#__PURE__*/React.createElement("select", {
     name: "Select",
     className: styles$3.select,
-    onChange: e => {
+    onChange: function onChange(e) {
       getvalueCallback(e.target.value);
     }
-  }, options.map(option => {
+  }, options.map(function (option) {
     return /*#__PURE__*/React.createElement("option", {
       key: option.value,
       value: option.value,
@@ -172,30 +215,47 @@ function Select({
   }));
 }
 
-var styles$4 = {"ratingContainer":"_styles__ratingContainer__3shO0","active":"_styles__active__20S1b","disabled":"_styles__disabled__24sjJ"};
+var styles$4 = {"ratingContainer":"_3shO0","active":"_20S1b","disabled":"_24sjJ"};
 
-function Rating({
-  getvalueCallback
-}) {
-  const icones = [1, 2, 3, 4, 5];
-  const [selected, setSelected] = useState(0);
+function Rating(_ref) {
+  var getvalueCallback = _ref.getvalueCallback;
+  var icones = [1, 2, 3, 4, 5];
+
+  var _useState = useState(0),
+      selected = _useState[0],
+      setSelected = _useState[1];
+
   return /*#__PURE__*/React.createElement("div", {
     className: styles$4.ratingContainer
-  }, icones.map((icone, index) => {
+  }, icones.map(function (icone, index) {
     return /*#__PURE__*/React.createElement("div", {
       key: icone,
       className: selected > index ? styles$4.active : styles$4.disabled,
-      onMouseOver: () => setSelected(index + 1),
-      onClick: () => getvalueCallback(index + 1)
+      onMouseOver: function onMouseOver() {
+        return setSelected(index + 1);
+      },
+      onClick: function onClick() {
+        return getvalueCallback(index + 1);
+      }
     });
   }));
 }
 
-const LoginForm$1 = props => /*#__PURE__*/React.createElement(LoginForm, props);
-const ContactForm$1 = props => /*#__PURE__*/React.createElement(ContactForm, props);
-const InputField$1 = props => /*#__PURE__*/React.createElement(InputField, props);
-const Select$1 = props => /*#__PURE__*/React.createElement(Select, props);
-const Rating$1 = props => /*#__PURE__*/React.createElement(Rating, props);
+var LoginForm$1 = function LoginForm$1(props) {
+  return /*#__PURE__*/React.createElement(LoginForm, props);
+};
+var ContactForm$1 = function ContactForm$1(props) {
+  return /*#__PURE__*/React.createElement(ContactForm, props);
+};
+var InputField$1 = function InputField$1(props) {
+  return /*#__PURE__*/React.createElement(InputField, props);
+};
+var Select$1 = function Select$1(props) {
+  return /*#__PURE__*/React.createElement(Select, props);
+};
+var Rating$1 = function Rating$1(props) {
+  return /*#__PURE__*/React.createElement(Rating, props);
+};
 
 export { ContactForm$1 as ContactForm, InputField$1 as InputField, LoginForm$1 as LoginForm, Rating$1 as Rating, Select$1 as Select };
 //# sourceMappingURL=index.modern.js.map
