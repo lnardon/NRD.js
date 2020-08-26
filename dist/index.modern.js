@@ -172,10 +172,30 @@ function Select({
   }));
 }
 
+var styles$4 = {"ratingContainer":"_styles__ratingContainer__3shO0","active":"_styles__active__20S1b","disabled":"_styles__disabled__24sjJ"};
+
+function Rating({
+  getvalueCallback
+}) {
+  const icones = [1, 2, 3, 4, 5];
+  const [selected, setSelected] = useState(0);
+  return /*#__PURE__*/React.createElement("div", {
+    className: styles$4.ratingContainer
+  }, icones.map((icone, index) => {
+    return /*#__PURE__*/React.createElement("div", {
+      key: index,
+      className: selected > index ? styles$4.active : styles$4.disabled,
+      onMouseOver: () => setSelected(index + 1),
+      onClick: () => getvalueCallback(index + 1)
+    });
+  }));
+}
+
 const LoginForm$1 = props => /*#__PURE__*/React.createElement(LoginForm, props);
 const ContactForm$1 = props => /*#__PURE__*/React.createElement(ContactForm, props);
 const InputField$1 = props => /*#__PURE__*/React.createElement(InputField, props);
 const Select$1 = props => /*#__PURE__*/React.createElement(Select, props);
+const Rating$1 = props => /*#__PURE__*/React.createElement(Rating, props);
 
-export { ContactForm$1 as ContactForm, InputField$1 as InputField, LoginForm$1 as LoginForm, Select$1 as Select };
+export { ContactForm$1 as ContactForm, InputField$1 as InputField, LoginForm$1 as LoginForm, Rating$1 as Rating, Select$1 as Select };
 //# sourceMappingURL=index.modern.js.map

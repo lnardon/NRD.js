@@ -13,6 +13,8 @@ For now all the components have a minimalistic black/white style but in the futu
 - LoginForm
 - ContactForm
 - InputField
+- Select
+- Rating
 
 ## Install
 

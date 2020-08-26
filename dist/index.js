@@ -218,6 +218,32 @@ function Select(_ref) {
   }));
 }
 
+var styles$4 = {"ratingContainer":"_styles__ratingContainer__3shO0","active":"_styles__active__20S1b","disabled":"_styles__disabled__24sjJ"};
+
+function Rating(_ref) {
+  var getvalueCallback = _ref.getvalueCallback;
+  var icones = [1, 2, 3, 4, 5];
+
+  var _useState = React.useState(0),
+      selected = _useState[0],
+      setSelected = _useState[1];
+
+  return /*#__PURE__*/React__default.createElement("div", {
+    className: styles$4.ratingContainer
+  }, icones.map(function (icone, index) {
+    return /*#__PURE__*/React__default.createElement("div", {
+      key: index,
+      className: selected > index ? styles$4.active : styles$4.disabled,
+      onMouseOver: function onMouseOver() {
+        return setSelected(index + 1);
+      },
+      onClick: function onClick() {
+        return getvalueCallback(index + 1);
+      }
+    });
+  }));
+}
+
 var LoginForm$1 = function LoginForm$1(props) {
   return /*#__PURE__*/React__default.createElement(LoginForm, props);
 };
@@ -230,9 +256,13 @@ var InputField$1 = function InputField$1(props) {
 var Select$1 = function Select$1(props) {
   return /*#__PURE__*/React__default.createElement(Select, props);
 };
+var Rating$1 = function Rating$1(props) {
+  return /*#__PURE__*/React__default.createElement(Rating, props);
+};
 
 exports.ContactForm = ContactForm$1;
 exports.InputField = InputField$1;
 exports.LoginForm = LoginForm$1;
+exports.Rating = Rating$1;
 exports.Select = Select$1;
 //# sourceMappingURL=index.js.map
