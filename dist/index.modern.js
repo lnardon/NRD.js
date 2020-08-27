@@ -252,6 +252,23 @@ function Drawer({
   })));
 }
 
+var styles$8 = {"progressContainer":"_styles__progressContainer__33-Mk","progressValue":"_styles__progressValue__YHqDe"};
+
+function Progress({
+  progressValue = 50
+}) {
+  const ref = useRef();
+  useEffect(() => {
+    ref.current.style.width = `${progressValue}%`;
+  }, [ref]);
+  return /*#__PURE__*/React.createElement("div", {
+    className: styles$8.progressContainer
+  }, /*#__PURE__*/React.createElement("div", {
+    className: styles$8.progressValue,
+    ref: ref
+  }));
+}
+
 function useLogger(variable) {
   useEffect(() => {
     console.log(variable);
@@ -297,9 +314,10 @@ const Rating$1 = props => /*#__PURE__*/React.createElement(Rating, props);
 const Slider$1 = props => /*#__PURE__*/React.createElement(Slider, props);
 const Alert$1 = props => /*#__PURE__*/React.createElement(Alert, props);
 const Drawer$1 = props => /*#__PURE__*/React.createElement(Drawer, props);
+const Progress$1 = props => /*#__PURE__*/React.createElement(Progress, props);
 const useLogger$1 = variable => useLogger(variable);
 const useCPFChecker$1 = cpf => useCPFChecker(cpf);
 const useLocalStorage$1 = (key, initialValue) => useLocalStorage(key, initialValue);
 
-export { Alert$1 as Alert, ContactForm$1 as ContactForm, Drawer$1 as Drawer, InputField$1 as InputField, LoginForm$1 as LoginForm, Rating$1 as Rating, Select$1 as Select, Slider$1 as Slider, useCPFChecker$1 as useCPFChecker, useLocalStorage$1 as useLocalStorage, useLogger$1 as useLogger };
+export { Alert$1 as Alert, ContactForm$1 as ContactForm, Drawer$1 as Drawer, InputField$1 as InputField, LoginForm$1 as LoginForm, Progress$1 as Progress, Rating$1 as Rating, Select$1 as Select, Slider$1 as Slider, useCPFChecker$1 as useCPFChecker, useLocalStorage$1 as useLocalStorage, useLogger$1 as useLogger };
 //# sourceMappingURL=index.modern.js.map

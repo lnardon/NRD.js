@@ -9,6 +9,7 @@ import RatingComponent from './components/Rating'
 import SliderComponent from './components/Slider'
 import AlertComponent from './components/Alert'
 import DrawerComponent from './components/Drawer'
+import ProgressComponent from './components/Progress'
 
 // Hooks Import
 import useLoggerHook from './hooks/useLogger'
@@ -24,6 +25,7 @@ export const Rating = (props) => <RatingComponent {...props} />
 export const Slider = (props) => <SliderComponent {...props} />
 export const Alert = (props) => <AlertComponent {...props} />
 export const Drawer = (props) => <DrawerComponent {...props} />
+export const Progress = (props) => <ProgressComponent {...props} />
 
 // Hooks Export
 export const useLogger = (variable) => useLoggerHook(variable)

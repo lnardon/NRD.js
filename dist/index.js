@@ -306,6 +306,23 @@ function Drawer(_ref) {
   })));
 }
 
+var styles$8 = {"progressContainer":"_styles__progressContainer__33-Mk","progressValue":"_styles__progressValue__YHqDe"};
+
+function Progress(_ref) {
+  var _ref$progressValue = _ref.progressValue,
+      progressValue = _ref$progressValue === void 0 ? 50 : _ref$progressValue;
+  var ref = React.useRef();
+  React.useEffect(function () {
+    ref.current.style.width = progressValue + "%";
+  }, [ref]);
+  return /*#__PURE__*/React__default.createElement("div", {
+    className: styles$8.progressContainer
+  }, /*#__PURE__*/React__default.createElement("div", {
+    className: styles$8.progressValue,
+    ref: ref
+  }));
+}
+
 function useLogger(variable) {
   React.useEffect(function () {
     console.log(variable);
@@ -372,6 +389,9 @@ var Alert$1 = function Alert$1(props) {
 var Drawer$1 = function Drawer$1(props) {
   return /*#__PURE__*/React__default.createElement(Drawer, props);
 };
+var Progress$1 = function Progress$1(props) {
+  return /*#__PURE__*/React__default.createElement(Progress, props);
+};
 var useLogger$1 = function useLogger$1(variable) {
   return useLogger(variable);
 };
@@ -387,6 +407,7 @@ exports.ContactForm = ContactForm$1;
 exports.Drawer = Drawer$1;
 exports.InputField = InputField$1;
 exports.LoginForm = LoginForm$1;
+exports.Progress = Progress$1;
 exports.Rating = Rating$1;
 exports.Select = Select$1;
 exports.Slider = Slider$1;
