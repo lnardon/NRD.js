@@ -1,0 +1,36 @@
+.alertContainer {
+  position: absolute;
+  left: -100vw;
+  bottom: 30px;
+  display: flex;
+  align-items: center;
+  border: 3px solid #171717;
+  width: fit-content;
+  padding: 0rem 0.5rem;
+  animation: cardAnimationIn 1.5s ease-in-out forwards,
+    cardAnimationOut 1.7s 5s ease-in-out forwards;
+}
+
+.alertIcon {
+  width: 35px;
+  height: 35px;
+  margin-right: 0.5rem;
+}
+
+@keyframes cardAnimationIn {
+  from {
+    left: -100vw;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+@keyframes cardAnimationOut {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -100vw;
+  }
+}

@@ -262,6 +262,21 @@ function Slider(_ref) {
   });
 }
 
+var styles$6 = {"alertContainer":"_styles__alertContainer__Nr9nH","cardAnimationIn":"_styles__cardAnimationIn__28pWq","cardAnimationOut":"_styles__cardAnimationOut__1KwFf","alertIcon":"_styles__alertIcon__2qceH"};
+
+function Alert(_ref) {
+  var message = _ref.message;
+  return /*#__PURE__*/React__default.createElement("div", {
+    className: styles$6.alertContainer
+  }, /*#__PURE__*/React__default.createElement("img", {
+    src: "https://image.flaticon.com/icons/svg/550/550096.svg",
+    alt: "Icon",
+    className: styles$6.alertIcon
+  }), /*#__PURE__*/React__default.createElement("h3", {
+    className: styles$6.message
+  }, message));
+}
+
 function useLogger(variable) {
   React.useEffect(function () {
     console.log(variable);
@@ -322,6 +337,9 @@ var Rating$1 = function Rating$1(props) {
 var Slider$1 = function Slider$1(props) {
   return /*#__PURE__*/React__default.createElement(Slider, props);
 };
+var Alert$1 = function Alert$1(props) {
+  return /*#__PURE__*/React__default.createElement(Alert, props);
+};
 var useLogger$1 = function useLogger$1(variable) {
   return useLogger(variable);
 };
@@ -332,6 +350,7 @@ var useLocalStorage$1 = function useLocalStorage$1(key, initialValue) {
   return useLocalStorage(key, initialValue);
 };
 
+exports.Alert = Alert$1;
 exports.ContactForm = ContactForm$1;
 exports.InputField = InputField$1;
 exports.LoginForm = LoginForm$1;

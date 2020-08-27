@@ -208,6 +208,22 @@ function Slider({
   });
 }
 
+var styles$6 = {"alertContainer":"_styles__alertContainer__Nr9nH","cardAnimationIn":"_styles__cardAnimationIn__28pWq","cardAnimationOut":"_styles__cardAnimationOut__1KwFf","alertIcon":"_styles__alertIcon__2qceH"};
+
+function Alert({
+  message
+}) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: styles$6.alertContainer
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "https://image.flaticon.com/icons/svg/550/550096.svg",
+    alt: "Icon",
+    className: styles$6.alertIcon
+  }), /*#__PURE__*/React.createElement("h3", {
+    className: styles$6.message
+  }, message));
+}
+
 function useLogger(variable) {
   useEffect(() => {
     console.log(variable);
@@ -251,9 +267,10 @@ const InputField$1 = props => /*#__PURE__*/React.createElement(InputField, props
 const Select$1 = props => /*#__PURE__*/React.createElement(Select, props);
 const Rating$1 = props => /*#__PURE__*/React.createElement(Rating, props);
 const Slider$1 = props => /*#__PURE__*/React.createElement(Slider, props);
+const Alert$1 = props => /*#__PURE__*/React.createElement(Alert, props);
 const useLogger$1 = variable => useLogger(variable);
 const useCPFChecker$1 = cpf => useCPFChecker(cpf);
 const useLocalStorage$1 = (key, initialValue) => useLocalStorage(key, initialValue);
 
-export { ContactForm$1 as ContactForm, InputField$1 as InputField, LoginForm$1 as LoginForm, Rating$1 as Rating, Select$1 as Select, Slider$1 as Slider, useCPFChecker$1 as useCPFChecker, useLocalStorage$1 as useLocalStorage, useLogger$1 as useLogger };
+export { Alert$1 as Alert, ContactForm$1 as ContactForm, InputField$1 as InputField, LoginForm$1 as LoginForm, Rating$1 as Rating, Select$1 as Select, Slider$1 as Slider, useCPFChecker$1 as useCPFChecker, useLocalStorage$1 as useLocalStorage, useLogger$1 as useLogger };
 //# sourceMappingURL=index.modern.js.map
