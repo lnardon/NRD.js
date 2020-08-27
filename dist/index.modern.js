@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 var styles = {"form":"_styles__form__2vqA3","inputFieldDiv":"_styles__inputFieldDiv__u071I","loginLogo":"_styles__loginLogo__rSjCy","loginBtn":"_styles__loginBtn__1uQnd"};
 
@@ -224,6 +224,34 @@ function Alert({
   }, message));
 }
 
+var styles$7 = {"drawerTab":"_styles__drawerTab__eCZeR","drawerTabHeader":"_styles__drawerTabHeader__1lqN1","drawerTitle":"_styles__drawerTitle__2xViP","closeIcon":"_styles__closeIcon__24817","open":"_styles__open__2sxod","openDrawer":"_styles__openDrawer__28Z3R","close":"_styles__close__RMMUh","closeDrawer":"_styles__closeDrawer__38H0N"};
+
+function Drawer({
+  title = 'Drawer Header',
+  toggle = true
+}) {
+  const ref = useRef();
+
+  const handleClose = () => {
+    ref.current.classList.add(styles$7.close);
+    ref.current.classList.remove(styles$7.add);
+  };
+
+  return /*#__PURE__*/React.createElement("div", {
+    ref: ref,
+    className: `${styles$7.drawerTab} ${toggle ? styles$7.open : styles$7.close}`
+  }, /*#__PURE__*/React.createElement("div", {
+    className: styles$7.drawerTabHeader
+  }, /*#__PURE__*/React.createElement("h2", {
+    className: styles$7.drawerTitle
+  }, title), /*#__PURE__*/React.createElement("img", {
+    src: "https://image.flaticon.com/icons/svg/748/748122.svg",
+    alt: "Close Icon",
+    className: styles$7.closeIcon,
+    onClick: handleClose
+  })));
+}
+
 function useLogger(variable) {
   useEffect(() => {
     console.log(variable);
@@ -268,9 +296,10 @@ const Select$1 = props => /*#__PURE__*/React.createElement(Select, props);
 const Rating$1 = props => /*#__PURE__*/React.createElement(Rating, props);
 const Slider$1 = props => /*#__PURE__*/React.createElement(Slider, props);
 const Alert$1 = props => /*#__PURE__*/React.createElement(Alert, props);
+const Drawer$1 = props => /*#__PURE__*/React.createElement(Drawer, props);
 const useLogger$1 = variable => useLogger(variable);
 const useCPFChecker$1 = cpf => useCPFChecker(cpf);
 const useLocalStorage$1 = (key, initialValue) => useLocalStorage(key, initialValue);
 
-export { Alert$1 as Alert, ContactForm$1 as ContactForm, InputField$1 as InputField, LoginForm$1 as LoginForm, Rating$1 as Rating, Select$1 as Select, Slider$1 as Slider, useCPFChecker$1 as useCPFChecker, useLocalStorage$1 as useLocalStorage, useLogger$1 as useLogger };
+export { Alert$1 as Alert, ContactForm$1 as ContactForm, Drawer$1 as Drawer, InputField$1 as InputField, LoginForm$1 as LoginForm, Rating$1 as Rating, Select$1 as Select, Slider$1 as Slider, useCPFChecker$1 as useCPFChecker, useLocalStorage$1 as useLocalStorage, useLogger$1 as useLogger };
 //# sourceMappingURL=index.modern.js.map

@@ -277,6 +277,35 @@ function Alert(_ref) {
   }, message));
 }
 
+var styles$7 = {"drawerTab":"_styles__drawerTab__eCZeR","drawerTabHeader":"_styles__drawerTabHeader__1lqN1","drawerTitle":"_styles__drawerTitle__2xViP","closeIcon":"_styles__closeIcon__24817","open":"_styles__open__2sxod","openDrawer":"_styles__openDrawer__28Z3R","close":"_styles__close__RMMUh","closeDrawer":"_styles__closeDrawer__38H0N"};
+
+function Drawer(_ref) {
+  var _ref$title = _ref.title,
+      title = _ref$title === void 0 ? 'Drawer Header' : _ref$title,
+      _ref$toggle = _ref.toggle,
+      toggle = _ref$toggle === void 0 ? true : _ref$toggle;
+  var ref = React.useRef();
+
+  var handleClose = function handleClose() {
+    ref.current.classList.add(styles$7.close);
+    ref.current.classList.remove(styles$7.add);
+  };
+
+  return /*#__PURE__*/React__default.createElement("div", {
+    ref: ref,
+    className: styles$7.drawerTab + " " + (toggle ? styles$7.open : styles$7.close)
+  }, /*#__PURE__*/React__default.createElement("div", {
+    className: styles$7.drawerTabHeader
+  }, /*#__PURE__*/React__default.createElement("h2", {
+    className: styles$7.drawerTitle
+  }, title), /*#__PURE__*/React__default.createElement("img", {
+    src: "https://image.flaticon.com/icons/svg/748/748122.svg",
+    alt: "Close Icon",
+    className: styles$7.closeIcon,
+    onClick: handleClose
+  })));
+}
+
 function useLogger(variable) {
   React.useEffect(function () {
     console.log(variable);
@@ -340,6 +369,9 @@ var Slider$1 = function Slider$1(props) {
 var Alert$1 = function Alert$1(props) {
   return /*#__PURE__*/React__default.createElement(Alert, props);
 };
+var Drawer$1 = function Drawer$1(props) {
+  return /*#__PURE__*/React__default.createElement(Drawer, props);
+};
 var useLogger$1 = function useLogger$1(variable) {
   return useLogger(variable);
 };
@@ -352,6 +384,7 @@ var useLocalStorage$1 = function useLocalStorage$1(key, initialValue) {
 
 exports.Alert = Alert$1;
 exports.ContactForm = ContactForm$1;
+exports.Drawer = Drawer$1;
 exports.InputField = InputField$1;
 exports.LoginForm = LoginForm$1;
 exports.Rating = Rating$1;

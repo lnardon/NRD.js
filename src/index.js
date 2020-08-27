@@ -8,6 +8,7 @@ import SelectComponent from './components/Select'
 import RatingComponent from './components/Rating'
 import SliderComponent from './components/Slider'
 import AlertComponent from './components/Alert'
+import DrawerComponent from './components/Drawer'
 
 // Hooks Import
 import useLoggerHook from './hooks/useLogger'
@@ -22,6 +23,7 @@ export const Select = (props) => <SelectComponent {...props} />
 export const Rating = (props) => <RatingComponent {...props} />
 export const Slider = (props) => <SliderComponent {...props} />
 export const Alert = (props) => <AlertComponent {...props} />
+export const Drawer = (props) => <DrawerComponent {...props} />
 
 // Hooks Export
 export const useLogger = (variable) => useLoggerHook(variable)

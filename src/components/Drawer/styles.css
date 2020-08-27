@@ -1,0 +1,62 @@
+.drawerTab {
+  display: block;
+  position: absolute;
+  width: 350px;
+  height: 100vh;
+  background-color: #fff;
+  top: 0px;
+  z-index: 1001;
+  border: 1px solid #171717;
+}
+
+.drawerTabHeader {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.drawerTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #171717;
+}
+
+.closeIcon {
+  width: 20px;
+  cursor: pointer;
+}
+
+.closeIcon:hover {
+  transform: scale(1.1);
+}
+
+.open {
+  animation: openDrawer 1s ease-in-out forwards;
+}
+
+.close {
+  animation: closeDrawer 1s ease-in-out forwards;
+}
+
+@keyframes openDrawer {
+  from {
+    right: -100vw;
+  }
+  to {
+    right: 0px;
+  }
+}
+
+@keyframes closeDrawer {
+  from {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+  to {
+    /* opacity: 0; */
+    overflow: hidden;
+    transform: translateX(100vw);
+  }
+}
