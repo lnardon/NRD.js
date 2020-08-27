@@ -260,7 +260,6 @@ function Progress({
 }) {
   const ref = useRef();
   useEffect(() => {
-    console.log(progressValue * maxValue / 100);
     ref.current.style.width = `${progressValue * 100 / maxValue}%`;
   }, []);
   return /*#__PURE__*/React.createElement("div", {
@@ -271,6 +270,45 @@ function Progress({
   }), /*#__PURE__*/React.createElement("h2", {
     className: styles$8.value
   }, `${progressValue * 100 / maxValue}%`));
+}
+
+var styles$9 = {};
+
+function ImageDropzone({
+  url
+}) {
+  const [images, setImages] = useState([]);
+
+  const sendPictures = async () => {
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        contentType: 'application/json'
+      },
+      body: JSON.stringify(images)
+    });
+  };
+
+  const getImages = imgs => {
+    const convertedImages = [];
+    console.log(imgs);
+    setImages(convertedImages);
+  };
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: styles$9.dropzoneContainer
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "file",
+    name: "imageDropzone",
+    onChange: imgs => getImages(imgs.target.files)
+  }), images.forEach(image => {
+    return /*#__PURE__*/React.createElement("img", {
+      src: image.base64,
+      alt: "Preview"
+    });
+  }), /*#__PURE__*/React.createElement("button", {
+    onClick: sendPictures
+  }, "Send"));
 }
 
 function useLogger(variable) {
@@ -319,9 +357,10 @@ const Slider$1 = props => /*#__PURE__*/React.createElement(Slider, props);
 const Alert$1 = props => /*#__PURE__*/React.createElement(Alert, props);
 const Drawer$1 = props => /*#__PURE__*/React.createElement(Drawer, props);
 const Progress$1 = props => /*#__PURE__*/React.createElement(Progress, props);
+const ImageDropzone$1 = props => /*#__PURE__*/React.createElement(ImageDropzone, props);
 const useLogger$1 = variable => useLogger(variable);
 const useCPFChecker$1 = cpf => useCPFChecker(cpf);
 const useLocalStorage$1 = (key, initialValue) => useLocalStorage(key, initialValue);
 
-export { Alert$1 as Alert, ContactForm$1 as ContactForm, Drawer$1 as Drawer, InputField$1 as InputField, LoginForm$1 as LoginForm, Progress$1 as Progress, Rating$1 as Rating, Select$1 as Select, Slider$1 as Slider, useCPFChecker$1 as useCPFChecker, useLocalStorage$1 as useLocalStorage, useLogger$1 as useLogger };
+export { Alert$1 as Alert, ContactForm$1 as ContactForm, Drawer$1 as Drawer, ImageDropzone$1 as ImageDropzone, InputField$1 as InputField, LoginForm$1 as LoginForm, Progress$1 as Progress, Rating$1 as Rating, Select$1 as Select, Slider$1 as Slider, useCPFChecker$1 as useCPFChecker, useLocalStorage$1 as useLocalStorage, useLogger$1 as useLogger };
 //# sourceMappingURL=index.modern.js.map

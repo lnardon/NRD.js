@@ -315,7 +315,6 @@ function Progress(_ref) {
       progressValue = _ref$progressValue === void 0 ? 70 : _ref$progressValue;
   var ref = React.useRef();
   React.useEffect(function () {
-    console.log(progressValue * maxValue / 100);
     ref.current.style.width = progressValue * 100 / maxValue + "%";
   }, []);
   return /*#__PURE__*/React__default.createElement("div", {
@@ -326,6 +325,54 @@ function Progress(_ref) {
   }), /*#__PURE__*/React__default.createElement("h2", {
     className: styles$8.value
   }, progressValue * 100 / maxValue + "%"));
+}
+
+var styles$9 = {};
+
+function ImageDropzone(_ref) {
+  var url = _ref.url;
+
+  var _useState = React.useState([]),
+      images = _useState[0],
+      setImages = _useState[1];
+
+  var sendPictures = function sendPictures() {
+    try {
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          contentType: 'application/json'
+        },
+        body: JSON.stringify(images)
+      });
+      return Promise.resolve();
+    } catch (e) {
+      return Promise.reject(e);
+    }
+  };
+
+  var getImages = function getImages(imgs) {
+    var convertedImages = [];
+    console.log(imgs);
+    setImages(convertedImages);
+  };
+
+  return /*#__PURE__*/React__default.createElement("div", {
+    className: styles$9.dropzoneContainer
+  }, /*#__PURE__*/React__default.createElement("input", {
+    type: "file",
+    name: "imageDropzone",
+    onChange: function onChange(imgs) {
+      return getImages(imgs.target.files);
+    }
+  }), images.forEach(function (image) {
+    return /*#__PURE__*/React__default.createElement("img", {
+      src: image.base64,
+      alt: "Preview"
+    });
+  }), /*#__PURE__*/React__default.createElement("button", {
+    onClick: sendPictures
+  }, "Send"));
 }
 
 function useLogger(variable) {
@@ -397,6 +444,9 @@ var Drawer$1 = function Drawer$1(props) {
 var Progress$1 = function Progress$1(props) {
   return /*#__PURE__*/React__default.createElement(Progress, props);
 };
+var ImageDropzone$1 = function ImageDropzone$1(props) {
+  return /*#__PURE__*/React__default.createElement(ImageDropzone, props);
+};
 var useLogger$1 = function useLogger$1(variable) {
   return useLogger(variable);
 };
@@ -410,6 +460,7 @@ var useLocalStorage$1 = function useLocalStorage$1(key, initialValue) {
 exports.Alert = Alert$1;
 exports.ContactForm = ContactForm$1;
 exports.Drawer = Drawer$1;
+exports.ImageDropzone = ImageDropzone$1;
 exports.InputField = InputField$1;
 exports.LoginForm = LoginForm$1;
 exports.Progress = Progress$1;

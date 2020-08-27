@@ -6,7 +6,6 @@ function Progress({ maxValue = 100, progressValue = 70 }) {
   const ref = useRef()
 
   useEffect(() => {
-    console.log((progressValue * maxValue) / 100)
     ref.current.style.width = `${(progressValue * 100) / maxValue}%`
   }, [])
 
