@@ -306,21 +306,23 @@ function Drawer(_ref) {
   })));
 }
 
-var styles$8 = {"progressContainer":"_styles__progressContainer__33-Mk","progressValue":"_styles__progressValue__YHqDe"};
+var styles$8 = {"progressContainer":"_styles__progressContainer__33-Mk","progressValue":"_styles__progressValue__YHqDe","value":"_styles__value__1FAJt"};
 
 function Progress(_ref) {
   var _ref$progressValue = _ref.progressValue,
-      progressValue = _ref$progressValue === void 0 ? 50 : _ref$progressValue;
+      progressValue = _ref$progressValue === void 0 ? 15 : _ref$progressValue;
   var ref = React.useRef();
   React.useEffect(function () {
     ref.current.style.width = progressValue + "%";
-  }, [ref]);
+  }, []);
   return /*#__PURE__*/React__default.createElement("div", {
     className: styles$8.progressContainer
   }, /*#__PURE__*/React__default.createElement("div", {
     className: styles$8.progressValue,
     ref: ref
-  }));
+  }), /*#__PURE__*/React__default.createElement("h2", {
+    className: styles$8.value
+  }, progressValue, "%"));
 }
 
 function useLogger(variable) {

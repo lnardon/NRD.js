@@ -252,21 +252,24 @@ function Drawer({
   })));
 }
 
-var styles$8 = {"progressContainer":"_styles__progressContainer__33-Mk","progressValue":"_styles__progressValue__YHqDe"};
+var styles$8 = {"progressContainer":"_styles__progressContainer__33-Mk","progressValue":"_styles__progressValue__YHqDe","value":"_styles__value__1FAJt"};
 
 function Progress({
-  progressValue = 50
+  maxValue = 100,
+  progressValue = 15
 }) {
   const ref = useRef();
   useEffect(() => {
     ref.current.style.width = `${progressValue}%`;
-  }, [ref]);
+  }, []);
   return /*#__PURE__*/React.createElement("div", {
     className: styles$8.progressContainer
   }, /*#__PURE__*/React.createElement("div", {
     className: styles$8.progressValue,
     ref: ref
-  }));
+  }), /*#__PURE__*/React.createElement("h2", {
+    className: styles$8.value
+  }, progressValue, "%"));
 }
 
 function useLogger(variable) {
