@@ -309,11 +309,14 @@ function Drawer(_ref) {
 var styles$8 = {"progressContainer":"_styles__progressContainer__33-Mk","progressValue":"_styles__progressValue__YHqDe","value":"_styles__value__1FAJt"};
 
 function Progress(_ref) {
-  var _ref$progressValue = _ref.progressValue,
-      progressValue = _ref$progressValue === void 0 ? 15 : _ref$progressValue;
+  var _ref$maxValue = _ref.maxValue,
+      maxValue = _ref$maxValue === void 0 ? 100 : _ref$maxValue,
+      _ref$progressValue = _ref.progressValue,
+      progressValue = _ref$progressValue === void 0 ? 70 : _ref$progressValue;
   var ref = React.useRef();
   React.useEffect(function () {
-    ref.current.style.width = progressValue + "%";
+    console.log(progressValue * maxValue / 100);
+    ref.current.style.width = progressValue * 100 / maxValue + "%";
   }, []);
   return /*#__PURE__*/React__default.createElement("div", {
     className: styles$8.progressContainer
@@ -322,7 +325,7 @@ function Progress(_ref) {
     ref: ref
   }), /*#__PURE__*/React__default.createElement("h2", {
     className: styles$8.value
-  }, progressValue, "%"));
+  }, progressValue * 100 / maxValue + "%"));
 }
 
 function useLogger(variable) {

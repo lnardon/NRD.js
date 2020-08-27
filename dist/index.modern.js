@@ -256,11 +256,12 @@ var styles$8 = {"progressContainer":"_styles__progressContainer__33-Mk","progres
 
 function Progress({
   maxValue = 100,
-  progressValue = 15
+  progressValue = 70
 }) {
   const ref = useRef();
   useEffect(() => {
-    ref.current.style.width = `${progressValue}%`;
+    console.log(progressValue * maxValue / 100);
+    ref.current.style.width = `${progressValue * 100 / maxValue}%`;
   }, []);
   return /*#__PURE__*/React.createElement("div", {
     className: styles$8.progressContainer
@@ -269,7 +270,7 @@ function Progress({
     ref: ref
   }), /*#__PURE__*/React.createElement("h2", {
     className: styles$8.value
-  }, progressValue, "%"));
+  }, `${progressValue * 100 / maxValue}%`));
 }
 
 function useLogger(variable) {
