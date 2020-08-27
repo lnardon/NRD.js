@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import styles from './styles.css'
 
-function ImageDropzone({ url }) {
+function ImageDropzone({ url, getImagesCallback }) {
   const [images, setImages] = useState([])
 
   const sendPictures = async () => {
@@ -15,12 +15,21 @@ function ImageDropzone({ url }) {
 
   const getImages = (imgs) => {
     const convertedImages = []
-    console.log(imgs)
-    // imgs.forEach((img) => {
-    //   convertedImages.push({ img })
-    //   console.log(img)
-    // })
+    Array.from(imgs).forEach((img) => {
+      const reader = new FileReader()
+      reader.readAsDataURL(img)
+      reader.onload = () => {
+        convertedImages.push({
+          base64: reader.result,
+          type: img.type,
+          name: img.name
+        })
+      }
+    })
     setImages(convertedImages)
+    if (getImagesCallback) {
+      getImagesCallback(convertedImages)
+    }
   }
 
   return (
@@ -28,6 +37,7 @@ function ImageDropzone({ url }) {
       <input
         type='file'
         name='imageDropzone'
+        multiple
         onChange={(imgs) => getImages(imgs.target.files)}
       />
       {images.forEach((image) => {

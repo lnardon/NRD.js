@@ -275,7 +275,8 @@ function Progress({
 var styles$9 = {};
 
 function ImageDropzone({
-  url
+  url,
+  getImagesCallback
 }) {
   const [images, setImages] = useState([]);
 
@@ -291,8 +292,23 @@ function ImageDropzone({
 
   const getImages = imgs => {
     const convertedImages = [];
-    console.log(imgs);
+    Array.from(imgs).forEach(img => {
+      const reader = new FileReader();
+      reader.readAsDataURL(img);
+
+      reader.onload = () => {
+        convertedImages.push({
+          base64: reader.result,
+          type: img.type,
+          name: img.name
+        });
+      };
+    });
     setImages(convertedImages);
+
+    if (getImagesCallback) {
+      getImagesCallback(convertedImages);
+    }
   };
 
   return /*#__PURE__*/React.createElement("div", {
@@ -300,6 +316,7 @@ function ImageDropzone({
   }, /*#__PURE__*/React.createElement("input", {
     type: "file",
     name: "imageDropzone",
+    multiple: true,
     onChange: imgs => getImages(imgs.target.files)
   }), images.forEach(image => {
     return /*#__PURE__*/React.createElement("img", {

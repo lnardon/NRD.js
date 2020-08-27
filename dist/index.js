@@ -330,7 +330,8 @@ function Progress(_ref) {
 var styles$9 = {};
 
 function ImageDropzone(_ref) {
-  var url = _ref.url;
+  var url = _ref.url,
+      getImagesCallback = _ref.getImagesCallback;
 
   var _useState = React.useState([]),
       images = _useState[0],
@@ -353,8 +354,23 @@ function ImageDropzone(_ref) {
 
   var getImages = function getImages(imgs) {
     var convertedImages = [];
-    console.log(imgs);
+    Array.from(imgs).forEach(function (img) {
+      var reader = new FileReader();
+      reader.readAsDataURL(img);
+
+      reader.onload = function () {
+        convertedImages.push({
+          base64: reader.result,
+          type: img.type,
+          name: img.name
+        });
+      };
+    });
     setImages(convertedImages);
+
+    if (getImagesCallback) {
+      getImagesCallback(convertedImages);
+    }
   };
 
   return /*#__PURE__*/React__default.createElement("div", {
@@ -362,6 +378,7 @@ function ImageDropzone(_ref) {
   }, /*#__PURE__*/React__default.createElement("input", {
     type: "file",
     name: "imageDropzone",
+    multiple: true,
     onChange: function onChange(imgs) {
       return getImages(imgs.target.files);
     }
