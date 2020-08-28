@@ -400,7 +400,7 @@ function ImageDropzone(_ref) {
   }, "Send"));
 }
 
-var styles$a = {"container":"_styles__container__rpiBh","open":"_styles__open__2sdKv"};
+var styles$a = {"container":"_styles__container__rpiBh","content":"_styles__content__1K_Hk","open":"_styles__open__2sdKv","openAnimation":"_styles__openAnimation__1B2gW","closed":"_styles__closed__3vOJ4","closeAnimation":"_styles__closeAnimation__15noc"};
 
 function ExpandableArea(_ref) {
   var title = _ref.title,

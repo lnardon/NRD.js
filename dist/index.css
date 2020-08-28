@@ -430,6 +430,69 @@ input::-webkit-inner-spin-button {
   background-color: red;
 }
 
+._styles__content__1K_Hk {
+  opacity: 0;
+  height: 0px;
+}
+
 ._styles__open__2sdKv {
-  background-color: #131313;
+  -webkit-animation: _styles__openAnimation__1B2gW 2s ease forwards;
+          animation: _styles__openAnimation__1B2gW 2s ease forwards;
+}
+
+._styles__closed__3vOJ4 {
+  -webkit-animation: _styles__closeAnimation__15noc 2s ease forwards;
+          animation: _styles__closeAnimation__15noc 2s ease forwards;
+}
+
+@-webkit-keyframes _styles__openAnimation__1B2gW {
+  from {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  to {
+    opacity: 1;
+    height: 200px;
+    padding: 0.5rem;
+  }
+}
+
+@keyframes _styles__openAnimation__1B2gW {
+  from {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  to {
+    opacity: 1;
+    height: 200px;
+    padding: 0.5rem;
+  }
+}
+
+@-webkit-keyframes _styles__closeAnimation__15noc {
+  from {
+    opacity: 1;
+    height: 200px;
+    padding: 0.5rem;
+  }
+  to {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+@keyframes _styles__closeAnimation__15noc {
+  from {
+    opacity: 1;
+    height: 200px;
+    padding: 0.5rem;
+  }
+  to {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+  }
 }

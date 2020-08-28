@@ -4,6 +4,41 @@
   background-color: red;
 }
 
+.content {
+  opacity: 0;
+  height: 0px;
+}
+
 .open {
-  background-color: #131313;
+  animation: openAnimation 2s ease forwards;
+}
+
+.closed {
+  animation: closeAnimation 2s ease forwards;
+}
+
+@keyframes openAnimation {
+  from {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  to {
+    opacity: 1;
+    height: 200px;
+    padding: 0.5rem;
+  }
+}
+
+@keyframes closeAnimation {
+  from {
+    opacity: 1;
+    height: 200px;
+    padding: 0.5rem;
+  }
+  to {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+  }
 }
