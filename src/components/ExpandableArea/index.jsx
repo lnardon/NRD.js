@@ -12,19 +12,19 @@ function ExpandableArea({ title, content, areaStatus }) {
       areaRef.current.classList.remove(`${styles.closed}`)
       arrowRef.current.classList.add(`${styles.downArrow}`)
       arrowRef.current.classList.remove(`${styles.rightArrow}`)
-      console.log(areaRef.current.classList)
     } else {
       areaRef.current.classList.add(`${styles.closed}`)
       areaRef.current.classList.remove(`${styles.open}`)
       arrowRef.current.classList.add(`${styles.rightArrow}`)
       arrowRef.current.classList.remove(`${styles.downArrow}`)
-      console.log(areaRef.current.classList)
     }
     setIsOpen(!isOpen)
   }
 
   useEffect(() => {
-    areaStatus(isOpen)
+    if (areaStatus) {
+      areaStatus(isOpen)
+    }
   }, [isOpen])
   return (
     <div className={styles.container}>

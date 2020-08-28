@@ -8,6 +8,7 @@ const App = () => {
     <ExpandableArea
       title='Test dsafbdafbo fadf dafpp'
       content='THIS IS TEASBFOIAGFPIAIG'
+      areaStatus={(e) => console.log(e)}
     />
   )
 }

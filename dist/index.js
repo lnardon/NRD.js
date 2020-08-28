@@ -420,20 +420,20 @@ function ExpandableArea(_ref) {
       areaRef.current.classList.remove("" + styles$a.closed);
       arrowRef.current.classList.add("" + styles$a.downArrow);
       arrowRef.current.classList.remove("" + styles$a.rightArrow);
-      console.log(areaRef.current.classList);
     } else {
       areaRef.current.classList.add("" + styles$a.closed);
       areaRef.current.classList.remove("" + styles$a.open);
       arrowRef.current.classList.add("" + styles$a.rightArrow);
       arrowRef.current.classList.remove("" + styles$a.downArrow);
-      console.log(areaRef.current.classList);
     }
 
     setIsOpen(!isOpen);
   };
 
   React.useEffect(function () {
-    areaStatus(isOpen);
+    if (areaStatus) {
+      areaStatus(isOpen);
+    }
   }, [isOpen]);
   return /*#__PURE__*/React__default.createElement("div", {
     className: styles$a.container
