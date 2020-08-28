@@ -381,6 +381,19 @@ function ExpandableArea({
   }, content));
 }
 
+var styles$b = {"switch":"_styles__switch__1hCbD","input":"_styles__input__5AKrL","slider":"_styles__slider__hsP7H"};
+
+function Switch() {
+  return /*#__PURE__*/React.createElement("label", {
+    className: styles$b.switch
+  }, /*#__PURE__*/React.createElement("input", {
+    className: styles$b.input,
+    type: "checkbox"
+  }), /*#__PURE__*/React.createElement("span", {
+    className: styles$b.slider
+  }));
+}
+
 function useLogger(variable) {
   useEffect(() => {
     console.log(variable);
@@ -429,9 +442,10 @@ const Drawer$1 = props => /*#__PURE__*/React.createElement(Drawer, props);
 const Progress$1 = props => /*#__PURE__*/React.createElement(Progress, props);
 const ImageDropzone$1 = props => /*#__PURE__*/React.createElement(ImageDropzone, props);
 const ExpandableArea$1 = props => /*#__PURE__*/React.createElement(ExpandableArea, props);
+const Switch$1 = props => /*#__PURE__*/React.createElement(Switch, props);
 const useLogger$1 = variable => useLogger(variable);
 const useCPFChecker$1 = cpf => useCPFChecker(cpf);
 const useLocalStorage$1 = (key, initialValue) => useLocalStorage(key, initialValue);
 
-export { Alert$1 as Alert, ContactForm$1 as ContactForm, Drawer$1 as Drawer, ExpandableArea$1 as ExpandableArea, ImageDropzone$1 as ImageDropzone, InputField$1 as InputField, LoginForm$1 as LoginForm, Progress$1 as Progress, Rating$1 as Rating, Select$1 as Select, Slider$1 as Slider, useCPFChecker$1 as useCPFChecker, useLocalStorage$1 as useLocalStorage, useLogger$1 as useLogger };
+export { Alert$1 as Alert, ContactForm$1 as ContactForm, Drawer$1 as Drawer, ExpandableArea$1 as ExpandableArea, ImageDropzone$1 as ImageDropzone, InputField$1 as InputField, LoginForm$1 as LoginForm, Progress$1 as Progress, Rating$1 as Rating, Select$1 as Select, Slider$1 as Slider, Switch$1 as Switch, useCPFChecker$1 as useCPFChecker, useLocalStorage$1 as useLocalStorage, useLogger$1 as useLogger };
 //# sourceMappingURL=index.modern.js.map

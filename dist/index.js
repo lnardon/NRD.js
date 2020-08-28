@@ -451,6 +451,19 @@ function ExpandableArea(_ref) {
   }, content));
 }
 
+var styles$b = {"switch":"_styles__switch__1hCbD","input":"_styles__input__5AKrL","slider":"_styles__slider__hsP7H"};
+
+function Switch() {
+  return /*#__PURE__*/React__default.createElement("label", {
+    className: styles$b["switch"]
+  }, /*#__PURE__*/React__default.createElement("input", {
+    className: styles$b.input,
+    type: "checkbox"
+  }), /*#__PURE__*/React__default.createElement("span", {
+    className: styles$b.slider
+  }));
+}
+
 function useLogger(variable) {
   React.useEffect(function () {
     console.log(variable);
@@ -526,6 +539,9 @@ var ImageDropzone$1 = function ImageDropzone$1(props) {
 var ExpandableArea$1 = function ExpandableArea$1(props) {
   return /*#__PURE__*/React__default.createElement(ExpandableArea, props);
 };
+var Switch$1 = function Switch$1(props) {
+  return /*#__PURE__*/React__default.createElement(Switch, props);
+};
 var useLogger$1 = function useLogger$1(variable) {
   return useLogger(variable);
 };
@@ -547,6 +563,7 @@ exports.Progress = Progress$1;
 exports.Rating = Rating$1;
 exports.Select = Select$1;
 exports.Slider = Slider$1;
+exports.Switch = Switch$1;
 exports.useCPFChecker = useCPFChecker$1;
 exports.useLocalStorage = useLocalStorage$1;
 exports.useLogger = useLogger$1;

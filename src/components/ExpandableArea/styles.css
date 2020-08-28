@@ -46,7 +46,7 @@
   }
   to {
     opacity: 1;
-    height: 200px;
+    height: auto;
     padding: 0.5rem 1rem;
   }
 }
@@ -54,7 +54,6 @@
 @keyframes closeAnimation {
   from {
     opacity: 1;
-    height: 200px;
     padding: 0.5rem 1rem;
   }
   to {
