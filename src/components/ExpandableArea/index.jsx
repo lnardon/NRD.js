@@ -1,8 +1,8 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 
 import styles from './styles.css'
 
-function ExpandableArea({ title, content }) {
+function ExpandableArea({ title, content, areaStatus }) {
   const [isOpen, setIsOpen] = useState(false)
   const areaRef = useRef()
   const arrowRef = useRef()
@@ -22,6 +22,10 @@ function ExpandableArea({ title, content }) {
     }
     setIsOpen(!isOpen)
   }
+
+  useEffect(() => {
+    areaStatus(isOpen)
+  }, [isOpen])
   return (
     <div className={styles.container}>
       <div className={styles.title} onClick={toggleArea}>

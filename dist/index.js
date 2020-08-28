@@ -404,7 +404,8 @@ var styles$a = {"container":"_styles__container__rpiBh","title":"_styles__title_
 
 function ExpandableArea(_ref) {
   var title = _ref.title,
-      content = _ref.content;
+      content = _ref.content,
+      areaStatus = _ref.areaStatus;
 
   var _useState = React.useState(false),
       isOpen = _useState[0],
@@ -431,6 +432,9 @@ function ExpandableArea(_ref) {
     setIsOpen(!isOpen);
   };
 
+  React.useEffect(function () {
+    areaStatus(isOpen);
+  }, [isOpen]);
   return /*#__PURE__*/React__default.createElement("div", {
     className: styles$a.container
   }, /*#__PURE__*/React__default.createElement("div", {

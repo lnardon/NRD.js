@@ -337,7 +337,8 @@ var styles$a = {"container":"_styles__container__rpiBh","title":"_styles__title_
 
 function ExpandableArea({
   title,
-  content
+  content,
+  areaStatus
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const areaRef = useRef();
@@ -361,6 +362,9 @@ function ExpandableArea({
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    areaStatus(isOpen);
+  }, [isOpen]);
   return /*#__PURE__*/React.createElement("div", {
     className: styles$a.container
   }, /*#__PURE__*/React.createElement("div", {
