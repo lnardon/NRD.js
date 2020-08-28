@@ -1,7 +1,28 @@
 .container {
   display: block;
   width: 100%;
-  background-color: red;
+  border: 3px solid #171717;
+  padding: 0.5rem;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.arrow {
+  width: 20px;
+}
+
+.rightArrow {
+  animation: rightAnimation 0.7s ease-out forwards;
+}
+
+.downArrow {
+  animation: downAnimation 0.7s ease-out forwards;
 }
 
 .content {
@@ -10,11 +31,11 @@
 }
 
 .open {
-  animation: openAnimation 2s ease forwards;
+  animation: openAnimation 0.7s ease-out forwards;
 }
 
 .closed {
-  animation: closeAnimation 2s ease forwards;
+  animation: closeAnimation 0.7s ease-out forwards;
 }
 
 @keyframes openAnimation {
@@ -40,5 +61,23 @@
     opacity: 0;
     height: 0;
     overflow: hidden;
+  }
+}
+
+@keyframes rightAnimation {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes downAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
   }
 }

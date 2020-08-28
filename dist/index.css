@@ -427,7 +427,30 @@ input::-webkit-inner-spin-button {
 ._styles__container__rpiBh {
   display: block;
   width: 100%;
-  background-color: red;
+  border: 3px solid #171717;
+  padding: 0.5rem;
+}
+
+._styles__title__33syD {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+._styles__arrow__2n47L {
+  width: 20px;
+}
+
+._styles__rightArrow__n2egu {
+  -webkit-animation: _styles__rightAnimation__BTr94 0.7s ease-out forwards;
+          animation: _styles__rightAnimation__BTr94 0.7s ease-out forwards;
+}
+
+._styles__downArrow__2dcpG {
+  -webkit-animation: _styles__downAnimation__3ZaGP 0.7s ease-out forwards;
+          animation: _styles__downAnimation__3ZaGP 0.7s ease-out forwards;
 }
 
 ._styles__content__1K_Hk {
@@ -436,13 +459,13 @@ input::-webkit-inner-spin-button {
 }
 
 ._styles__open__2sdKv {
-  -webkit-animation: _styles__openAnimation__1B2gW 2s ease forwards;
-          animation: _styles__openAnimation__1B2gW 2s ease forwards;
+  -webkit-animation: _styles__openAnimation__1B2gW 0.7s ease-out forwards;
+          animation: _styles__openAnimation__1B2gW 0.7s ease-out forwards;
 }
 
 ._styles__closed__3vOJ4 {
-  -webkit-animation: _styles__closeAnimation__15noc 2s ease forwards;
-          animation: _styles__closeAnimation__15noc 2s ease forwards;
+  -webkit-animation: _styles__closeAnimation__15noc 0.7s ease-out forwards;
+          animation: _styles__closeAnimation__15noc 0.7s ease-out forwards;
 }
 
 @-webkit-keyframes _styles__openAnimation__1B2gW {
@@ -494,5 +517,41 @@ input::-webkit-inner-spin-button {
     opacity: 0;
     height: 0;
     overflow: hidden;
+  }
+}
+
+@-webkit-keyframes _styles__rightAnimation__BTr94 {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes _styles__rightAnimation__BTr94 {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes _styles__downAnimation__3ZaGP {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes _styles__downAnimation__3ZaGP {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
   }
 }

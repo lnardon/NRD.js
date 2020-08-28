@@ -400,7 +400,7 @@ function ImageDropzone(_ref) {
   }, "Send"));
 }
 
-var styles$a = {"container":"_styles__container__rpiBh","content":"_styles__content__1K_Hk","open":"_styles__open__2sdKv","openAnimation":"_styles__openAnimation__1B2gW","closed":"_styles__closed__3vOJ4","closeAnimation":"_styles__closeAnimation__15noc"};
+var styles$a = {"container":"_styles__container__rpiBh","title":"_styles__title__33syD","arrow":"_styles__arrow__2n47L","rightArrow":"_styles__rightArrow__n2egu","rightAnimation":"_styles__rightAnimation__BTr94","downArrow":"_styles__downArrow__2dcpG","downAnimation":"_styles__downAnimation__3ZaGP","content":"_styles__content__1K_Hk","open":"_styles__open__2sdKv","openAnimation":"_styles__openAnimation__1B2gW","closed":"_styles__closed__3vOJ4","closeAnimation":"_styles__closeAnimation__15noc"};
 
 function ExpandableArea(_ref) {
   var title = _ref.title,
@@ -411,15 +411,20 @@ function ExpandableArea(_ref) {
       setIsOpen = _useState[1];
 
   var areaRef = React.useRef();
+  var arrowRef = React.useRef();
 
   var toggleArea = function toggleArea() {
     if (!isOpen) {
       areaRef.current.classList.add("" + styles$a.open);
       areaRef.current.classList.remove("" + styles$a.closed);
+      arrowRef.current.classList.add("" + styles$a.downArrow);
+      arrowRef.current.classList.remove("" + styles$a.rightArrow);
       console.log(areaRef.current.classList);
     } else {
       areaRef.current.classList.add("" + styles$a.closed);
       areaRef.current.classList.remove("" + styles$a.open);
+      arrowRef.current.classList.add("" + styles$a.rightArrow);
+      arrowRef.current.classList.remove("" + styles$a.downArrow);
       console.log(areaRef.current.classList);
     }
 
@@ -431,7 +436,12 @@ function ExpandableArea(_ref) {
   }, /*#__PURE__*/React__default.createElement("div", {
     className: styles$a.title,
     onClick: toggleArea
-  }, title), /*#__PURE__*/React__default.createElement("div", {
+  }, title, /*#__PURE__*/React__default.createElement("img", {
+    src: "https://image.flaticon.com/icons/svg/60/60758.svg",
+    alt: "Arrow",
+    className: styles$a.arrow,
+    ref: arrowRef
+  })), /*#__PURE__*/React__default.createElement("div", {
     className: styles$a.content,
     ref: areaRef
   }, content));
