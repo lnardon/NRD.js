@@ -327,7 +327,7 @@ function Progress(_ref) {
   }, progressValue * 100 / maxValue + "%"));
 }
 
-var styles$9 = {};
+var styles$9 = {"dropzoneContainer":"_styles__dropzoneContainer__2boa2"};
 
 function ImageDropzone(_ref) {
   var url = _ref.url,
@@ -336,6 +336,10 @@ function ImageDropzone(_ref) {
   var _useState = React.useState([]),
       images = _useState[0],
       setImages = _useState[1];
+
+  var _useState2 = React.useState(false),
+      hasImages = _useState2[0],
+      setHasImages = _useState2[1];
 
   var sendPictures = function sendPictures() {
     try {
@@ -371,6 +375,8 @@ function ImageDropzone(_ref) {
     if (getImagesCallback) {
       getImagesCallback(convertedImages);
     }
+
+    setHasImages(true);
   };
 
   return /*#__PURE__*/React__default.createElement("div", {
@@ -382,14 +388,53 @@ function ImageDropzone(_ref) {
     onChange: function onChange(imgs) {
       return getImages(imgs.target.files);
     }
-  }), images.forEach(function (image) {
+  }), hasImages ? images.map(function (image) {
+    console.log(image);
     return /*#__PURE__*/React__default.createElement("img", {
+      key: image.name,
       src: image.base64,
       alt: "Preview"
     });
-  }), /*#__PURE__*/React__default.createElement("button", {
+  }) : null, /*#__PURE__*/React__default.createElement("button", {
     onClick: sendPictures
   }, "Send"));
+}
+
+var styles$a = {"container":"_styles__container__rpiBh","open":"_styles__open__2sdKv"};
+
+function ExpandableArea(_ref) {
+  var title = _ref.title,
+      content = _ref.content;
+
+  var _useState = React.useState(false),
+      isOpen = _useState[0],
+      setIsOpen = _useState[1];
+
+  var areaRef = React.useRef();
+
+  var toggleArea = function toggleArea() {
+    if (!isOpen) {
+      areaRef.current.classList.add("" + styles$a.open);
+      areaRef.current.classList.remove("" + styles$a.closed);
+      console.log(areaRef.current.classList);
+    } else {
+      areaRef.current.classList.add("" + styles$a.closed);
+      areaRef.current.classList.remove("" + styles$a.open);
+      console.log(areaRef.current.classList);
+    }
+
+    setIsOpen(!isOpen);
+  };
+
+  return /*#__PURE__*/React__default.createElement("div", {
+    className: styles$a.container
+  }, /*#__PURE__*/React__default.createElement("div", {
+    className: styles$a.title,
+    onClick: toggleArea
+  }, title), /*#__PURE__*/React__default.createElement("div", {
+    className: styles$a.content,
+    ref: areaRef
+  }, content));
 }
 
 function useLogger(variable) {
@@ -464,6 +509,9 @@ var Progress$1 = function Progress$1(props) {
 var ImageDropzone$1 = function ImageDropzone$1(props) {
   return /*#__PURE__*/React__default.createElement(ImageDropzone, props);
 };
+var ExpandableArea$1 = function ExpandableArea$1(props) {
+  return /*#__PURE__*/React__default.createElement(ExpandableArea, props);
+};
 var useLogger$1 = function useLogger$1(variable) {
   return useLogger(variable);
 };
@@ -477,6 +525,7 @@ var useLocalStorage$1 = function useLocalStorage$1(key, initialValue) {
 exports.Alert = Alert$1;
 exports.ContactForm = ContactForm$1;
 exports.Drawer = Drawer$1;
+exports.ExpandableArea = ExpandableArea$1;
 exports.ImageDropzone = ImageDropzone$1;
 exports.InputField = InputField$1;
 exports.LoginForm = LoginForm$1;

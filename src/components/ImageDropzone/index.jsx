@@ -4,7 +4,7 @@ import styles from './styles.css'
 
 function ImageDropzone({ url, getImagesCallback }) {
   const [images, setImages] = useState([])
-
+  const [hasImages, setHasImages] = useState(false)
   const sendPictures = async () => {
     fetch(url, {
       method: 'POST',
@@ -30,6 +30,7 @@ function ImageDropzone({ url, getImagesCallback }) {
     if (getImagesCallback) {
       getImagesCallback(convertedImages)
     }
+    setHasImages(true)
   }
 
   return (
@@ -40,9 +41,12 @@ function ImageDropzone({ url, getImagesCallback }) {
         multiple
         onChange={(imgs) => getImages(imgs.target.files)}
       />
-      {images.forEach((image) => {
-        return <img src={image.base64} alt='Preview' />
-      })}
+      {hasImages
+        ? images.map((image) => {
+            console.log(image)
+            return <img key={image.name} src={image.base64} alt='Preview' />
+          })
+        : null}
       <button onClick={sendPictures}>Send</button>
     </div>
   )

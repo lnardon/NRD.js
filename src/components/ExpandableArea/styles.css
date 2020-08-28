@@ -1,0 +1,9 @@
+.container {
+  display: block;
+  width: 100%;
+  background-color: red;
+}
+
+.open {
+  background-color: #131313;
+}

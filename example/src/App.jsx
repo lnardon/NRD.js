@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { ImageDropzone } from 'nrd.js'
+import { ExpandableArea } from 'nrd.js'
 import 'nrd.js/dist/index.css'
 
 const App = () => {
-  return <ImageDropzone getImagesCallback={(e) => console.log(e)} />
+  return <ExpandableArea title='Test' content='THIS IS TEASBFOIAGFPIAIG' />
 }
 
 export default App

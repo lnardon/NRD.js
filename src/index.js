@@ -11,6 +11,7 @@ import AlertComponent from './components/Alert'
 import DrawerComponent from './components/Drawer'
 import ProgressComponent from './components/Progress'
 import ImageDropzoneComponent from './components/ImageDropzone'
+import ExpandableAreaComponent from './components/ExpandableArea'
 
 // Hooks Import
 import useLoggerHook from './hooks/useLogger'
@@ -28,6 +29,7 @@ export const Alert = (props) => <AlertComponent {...props} />
 export const Drawer = (props) => <DrawerComponent {...props} />
 export const Progress = (props) => <ProgressComponent {...props} />
 export const ImageDropzone = (props) => <ImageDropzoneComponent {...props} />
+export const ExpandableArea = (props) => <ExpandableAreaComponent {...props} />
 
 // Hooks Export
 export const useLogger = (variable) => useLoggerHook(variable)

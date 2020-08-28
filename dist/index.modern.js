@@ -272,13 +272,14 @@ function Progress({
   }, `${progressValue * 100 / maxValue}%`));
 }
 
-var styles$9 = {};
+var styles$9 = {"dropzoneContainer":"_styles__dropzoneContainer__2boa2"};
 
 function ImageDropzone({
   url,
   getImagesCallback
 }) {
   const [images, setImages] = useState([]);
+  const [hasImages, setHasImages] = useState(false);
 
   const sendPictures = async () => {
     fetch(url, {
@@ -309,6 +310,8 @@ function ImageDropzone({
     if (getImagesCallback) {
       getImagesCallback(convertedImages);
     }
+
+    setHasImages(true);
   };
 
   return /*#__PURE__*/React.createElement("div", {
@@ -318,14 +321,50 @@ function ImageDropzone({
     name: "imageDropzone",
     multiple: true,
     onChange: imgs => getImages(imgs.target.files)
-  }), images.forEach(image => {
+  }), hasImages ? images.map(image => {
+    console.log(image);
     return /*#__PURE__*/React.createElement("img", {
+      key: image.name,
       src: image.base64,
       alt: "Preview"
     });
-  }), /*#__PURE__*/React.createElement("button", {
+  }) : null, /*#__PURE__*/React.createElement("button", {
     onClick: sendPictures
   }, "Send"));
+}
+
+var styles$a = {"container":"_styles__container__rpiBh","open":"_styles__open__2sdKv"};
+
+function ExpandableArea({
+  title,
+  content
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const areaRef = useRef();
+
+  const toggleArea = () => {
+    if (!isOpen) {
+      areaRef.current.classList.add(`${styles$a.open}`);
+      areaRef.current.classList.remove(`${styles$a.closed}`);
+      console.log(areaRef.current.classList);
+    } else {
+      areaRef.current.classList.add(`${styles$a.closed}`);
+      areaRef.current.classList.remove(`${styles$a.open}`);
+      console.log(areaRef.current.classList);
+    }
+
+    setIsOpen(!isOpen);
+  };
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: styles$a.container
+  }, /*#__PURE__*/React.createElement("div", {
+    className: styles$a.title,
+    onClick: toggleArea
+  }, title), /*#__PURE__*/React.createElement("div", {
+    className: styles$a.content,
+    ref: areaRef
+  }, content));
 }
 
 function useLogger(variable) {
@@ -375,9 +414,10 @@ const Alert$1 = props => /*#__PURE__*/React.createElement(Alert, props);
 const Drawer$1 = props => /*#__PURE__*/React.createElement(Drawer, props);
 const Progress$1 = props => /*#__PURE__*/React.createElement(Progress, props);
 const ImageDropzone$1 = props => /*#__PURE__*/React.createElement(ImageDropzone, props);
+const ExpandableArea$1 = props => /*#__PURE__*/React.createElement(ExpandableArea, props);
 const useLogger$1 = variable => useLogger(variable);
 const useCPFChecker$1 = cpf => useCPFChecker(cpf);
 const useLocalStorage$1 = (key, initialValue) => useLocalStorage(key, initialValue);
 
-export { Alert$1 as Alert, ContactForm$1 as ContactForm, Drawer$1 as Drawer, ImageDropzone$1 as ImageDropzone, InputField$1 as InputField, LoginForm$1 as LoginForm, Progress$1 as Progress, Rating$1 as Rating, Select$1 as Select, Slider$1 as Slider, useCPFChecker$1 as useCPFChecker, useLocalStorage$1 as useLocalStorage, useLogger$1 as useLogger };
+export { Alert$1 as Alert, ContactForm$1 as ContactForm, Drawer$1 as Drawer, ExpandableArea$1 as ExpandableArea, ImageDropzone$1 as ImageDropzone, InputField$1 as InputField, LoginForm$1 as LoginForm, Progress$1 as Progress, Rating$1 as Rating, Select$1 as Select, Slider$1 as Slider, useCPFChecker$1 as useCPFChecker, useLocalStorage$1 as useLocalStorage, useLogger$1 as useLogger };
 //# sourceMappingURL=index.modern.js.map
