@@ -383,7 +383,9 @@ function ExpandableArea({
 
 var styles$b = {"switch":"_styles__switch__1hCbD","input":"_styles__input__5AKrL","slider":"_styles__slider__hsP7H"};
 
-function Switch() {
+function Switch({
+  getState
+}) {
   return /*#__PURE__*/React.createElement("label", {
     className: styles$b.switch
   }, /*#__PURE__*/React.createElement("input", {
