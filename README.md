@@ -10,10 +10,12 @@ For now all the components have a minimalistic black/white style but in the futu
 
 ## Available Components:
 
-- [LoginForm](#LoginForm)
+- [Alert](#Alert)
 - [ContactForm](#ContactForm)
+- [ExpandableArea](#ExpandableArea)
 - [InputField](#InputField)
-- [Select](#Select)
+- [LoginForm](#LoginForm)
+- [Progress](#Progress)
 - [Rating](#Rating)
 - [Select](#Select)
 - [Slider](#Slider)
@@ -54,12 +56,11 @@ MIT © [lnardon](https://github.com/lnardon)
 
 ## Components
 
-### LoginForm
+### Alert
 
-| Prop       | Description                                                               | value/format |
-| :--------- | :------------------------------------------------------------------------ | :----------- |
-| LoginImage | URL of the image displayed above the form                                 | string       |
-| url        | URL of the server to make the POST request with the username and password | string       |
+| Prop    | Description     | value/format |
+| :------ | :-------------- | :----------- |
+| message | Alert's Message | string       |
 
 </br>
 
@@ -72,6 +73,16 @@ MIT © [lnardon](https://github.com/lnardon)
 
 </br>
 
+### ExpandableArea
+
+| Prop      | Description                                 | value/format |
+| :-------- | :------------------------------------------ | :----------- |
+| title     | Title of the expandalble area               | string       |
+| content   | Content hidden by the expandalble area      | string       |
+| getStatus | Callback to get the status expandalble area | function     |
+
+</br>
+
 ### InputField
 
 | Prop             | Description                                                       | value/format |
@@ -81,12 +92,21 @@ MIT © [lnardon](https://github.com/lnardon)
 
 </br>
 
-### Select
+### LoginForm
 
-| Prop             | Description                                                                                           | value/format  |
-| :--------------- | :---------------------------------------------------------------------------------------------------- | :------------ |
-| options          | Array with the options available for the user to select(e.g: {label: OptionTitle, value: InputValue}) | array of JSON |
-| getvalueCallback | Callback that returns the selected value from the select as a parameter                               | function      |
+| Prop       | Description                                                               | value/format |
+| :--------- | :------------------------------------------------------------------------ | :----------- |
+| LoginImage | URL of the image displayed above the form                                 | string       |
+| url        | URL of the server to make the POST request with the username and password | string       |
+
+</br>
+
+### Progress
+
+| Prop          | Description                             | value/format |
+| :------------ | :-------------------------------------- | :----------- |
+| maxValue      | Maximun value of the progress indicator | number       |
+| progressValue | Initial value of the progress indicator | number       |
 
 </br>
 
@@ -100,10 +120,10 @@ MIT © [lnardon](https://github.com/lnardon)
 
 ### Select
 
-| Prop             | Description                                                            | value/format  |
-| :--------------- | :--------------------------------------------------------------------- | :------------ |
-| options          | Array of options available for the user to select                      | array of JSON |
-| getvalueCallback | Callback that returns the value from the Select Component as parameter | function      |
+| Prop             | Description                                                                                           | value/format  |
+| :--------------- | :---------------------------------------------------------------------------------------------------- | :------------ |
+| options          | Array with the options available for the user to select(e.g: {label: OptionTitle, value: InputValue}) | array of JSON |
+| getvalueCallback | Callback that returns the selected value from the select as a parameter                               | function      |
 
 </br>
 

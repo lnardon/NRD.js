@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react'
 
 import styles from './styles.css'
 
-function ExpandableArea({ title, content, areaStatus }) {
+function ExpandableArea({ title, content, getStatus }) {
   const [isOpen, setIsOpen] = useState(false)
   const areaRef = useRef()
   const arrowRef = useRef()
@@ -22,8 +22,8 @@ function ExpandableArea({ title, content, areaStatus }) {
   }
 
   useEffect(() => {
-    if (areaStatus) {
-      areaStatus(isOpen)
+    if (getStatus) {
+      getStatus(isOpen)
     }
   }, [isOpen])
   return (
