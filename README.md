@@ -1,10 +1,10 @@
 # NRD.js
 
-A React Component Library with all the most used components for Front-End Development created by lnardon
+A React Components/Hooks Library with all the most used components for Front-End Development created by lnardon
 
 [![NPM](https://img.shields.io/npm/v/nrd.js.svg)](https://www.npmjs.com/package/nrd.js) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-You can use this React Component Library to optimize your front-end development or even give it a more complete feel to your functional mockups.
+You can use this React Library to optimize your front-end development or even give it a more complete feel to your functional mockups.
 
 For now all the components have a minimalistic black/white style but in the future new designs will be created
 
@@ -41,7 +41,7 @@ import React from 'react'
 import { LoginForm } from 'nrd.js'
 
 const App = () => {
-  return <LoginForm />
+  return <Alert message='This is an alert message' />
 }
 ```
 
@@ -157,10 +157,10 @@ Function to check if the CPF Number (Brazilian Social Security) is valid.
 
 ### useLocalStorage
 
-Function to facilitate saving values in local storage.
+Function to facilitate saving/retrieving local storage values.
 
 </br>
 
 ### useLogger
 
-Function to log a given variable every time it change value.
+Function to log a given variable every time it changes value.

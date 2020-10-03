@@ -402,7 +402,7 @@ var styles$a = {"container":"_rpiBh","title":"_33syD","arrow":"_2n47L","rightArr
 function ExpandableArea(_ref) {
   var title = _ref.title,
       content = _ref.content,
-      areaStatus = _ref.areaStatus;
+      getStatus = _ref.getStatus;
 
   var _useState = useState(false),
       isOpen = _useState[0],
@@ -428,8 +428,8 @@ function ExpandableArea(_ref) {
   };
 
   useEffect(function () {
-    if (areaStatus) {
-      areaStatus(isOpen);
+    if (getStatus) {
+      getStatus(isOpen);
     }
   }, [isOpen]);
   return /*#__PURE__*/React.createElement("div", {
